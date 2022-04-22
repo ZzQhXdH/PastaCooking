@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_item">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x100"
+        style="@style/TextViewStyle"
+        android:id="@+id/id_text_view_title"
+        android:layout_marginStart="@dimen/y8"
+        android:layout_marginTop="@dimen/x8"
+        android:layout_marginEnd="@dimen/x8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/text_except_info" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_recycler_view_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/y18"
+        android:layout_marginTop="@dimen/x18"
+        android:layout_marginEnd="@dimen/x18"
+        android:layout_marginBottom="@dimen/x16"
+        app:layout_constraintBottom_toTopOf="@+id/id_btn_clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_view_title" />
+
+    <Button
+        android:id="@+id/id_btn_clear"
+        style="@style/ButtonStype"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"
+        android:layout_marginStart="@dimen/y100"
+        android:layout_marginEnd="@dimen/y100"
+        android:layout_marginBottom="@dimen/x16"
+        android:text="@string/text_clear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

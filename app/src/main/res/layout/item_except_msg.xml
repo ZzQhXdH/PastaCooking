@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x100">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/TextViewStyle"
+        android:textSize="@dimen/x30"
+        android:id="@+id/id_item_msg"
+        android:text="@string/text_default" />
+
+</FrameLayout>

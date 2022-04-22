@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x400"
+    android:layout_margin="@dimen/x20"
+    android:background="@drawable/shape_item">
+
+    <ProgressBar
+        android:id="@+id/id_item_prog"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/x200"
+        android:layout_marginTop="@dimen/x8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_item_text_view_title" />
+
+    <ImageView
+        android:id="@+id/id_item_img"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/y200"
+        android:layout_marginTop="@dimen/x8"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_ok"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_item_text_view_title" />
+
+    <TextView
+        android:id="@+id/id_item_text_view_title"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x60"
+        android:layout_marginTop="8dp"
+        android:text="出货"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_item_text_view_result"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/x8"
+        android:layout_marginBottom="@dimen/x8"
+        android:text="结果:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_item_prog" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

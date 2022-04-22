@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/x440"
+    android:layout_height="@dimen/y540"
+    android:background="@drawable/shape_item"
+    android:padding="@dimen/x10">
+
+    <EditText
+        android:id="@+id/editText9"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+
+    <EditText
+        android:id="@+id/editText8"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="140"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="喷蒸汽时间:"
+        android:textSize="@dimen/x35"
+        app:layout_constraintEnd_toStartOf="@+id/editText9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="位置D:"
+        android:textSize="@dimen/x35"
+        app:layout_constraintEnd_toStartOf="@+id/editText8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editText2"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="放水体积:"
+        android:textSize="@dimen/x35"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/id_text_view_title"
+        style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x8"
+        android:text="仅仅喷嘴清洗"
+        android:textSize="@dimen/x45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="位置C:"
+        android:textSize="@dimen/x35"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_view_title" />
+
+    <EditText
+        android:id="@+id/editText"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x16"
+        android:text="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_view_title" />
+
+    <Button
+        style="@style/ButtonStype"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y80"
+        android:layout_marginTop="@dimen/x20"
+        android:text="清洗"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

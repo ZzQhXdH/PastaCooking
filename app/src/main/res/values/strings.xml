@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PastaCooking</string>
+    <string name="menu_item_text_setting">设置</string>
+    <string name="menu_item_text_boiler">加热板</string>
+    <string name="menu_item_text_main">主控板</string>
+    <string name="menu_item_text_weight">称重板</string>
+    <string name="text_default">默认信息</string>
+    <string name="text_clear">清空</string>
+    <string name="text_except_info">异常信息</string>
+</resources>

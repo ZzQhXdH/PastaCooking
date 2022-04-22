@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/id_test_flow_param"
+        layout="@layout/sub_set_flow_param"
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/y280"
+        app:layout_constraintStart_toStartOf="@+id/id_test_heater"
+        app:layout_constraintTop_toTopOf="@+id/id_test_nozzle_motor"/>
+
+    <include
+        android:id="@+id/id_steam_boiler_param"
+        layout="@layout/sub_set_steam_boiler_param"
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/y440"
+        android:layout_marginStart="@dimen/x16"
+        android:layout_marginTop="@dimen/x16"
+        app:layout_constraintStart_toEndOf="@+id/id_water_boiler_param"
+        app:layout_constraintTop_toBottomOf="@+id/id_test_nozzle_draw"/>
+
+    <include
+        android:id="@+id/id_test_valve"
+        layout="@layout/sub_test_valve"
+        android:layout_width="@dimen/y400"
+        android:layout_height="@dimen/y280"
+        android:layout_marginStart="@dimen/x16"
+        android:layout_marginTop="@dimen/x16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/id_test_pump"
+        layout="@layout/sub_test_pump"
+        android:layout_width="@dimen/y400"
+        android:layout_height="@dimen/y280"
+        android:layout_marginStart="@dimen/x16"
+        app:layout_constraintStart_toEndOf="@+id/id_test_valve"
+        app:layout_constraintTop_toTopOf="@+id/id_test_valve"/>
+
+    <include
+        android:id="@+id/id_test_heater"
+        layout="@layout/sub_test_heater"
+        android:layout_width="@dimen/y400"
+        android:layout_height="@dimen/y280"
+        android:layout_marginStart="@dimen/x16"
+        app:layout_constraintStart_toEndOf="@+id/id_test_pump"
+        app:layout_constraintTop_toTopOf="@+id/id_test_pump"/>
+
+    <include
+        android:id="@+id/id_test_nozzle_motor"
+        layout="@layout/sub_test_nozzle_motor"
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/y280"
+        android:layout_marginStart="@dimen/x16"
+        android:layout_marginTop="@dimen/x16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_test_valve" />
+
+    <include
+        android:id="@+id/id_test_nozzle_draw"
+        layout="@layout/sub_test_nozzle_draw"
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/y280"
+        android:layout_marginStart="@dimen/x16"
+        app:layout_constraintStart_toEndOf="@+id/id_test_nozzle_motor"
+        app:layout_constraintTop_toTopOf="@+id/id_test_nozzle_motor"/>
+
+    <include
+        android:id="@+id/id_water_boiler_param"
+        layout="@layout/sub_set_water_boiler_param"
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/y350"
+        android:layout_marginStart="@dimen/x16"
+        android:layout_marginTop="@dimen/x16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_test_nozzle_draw" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

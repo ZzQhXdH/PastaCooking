@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_setting"
+        android:title="@string/menu_item_text_setting"
+        android:icon="@drawable/ic_setting"/>
+
+    <item android:id="@+id/menu_boiler"
+        android:title="@string/menu_item_text_boiler"
+        android:icon="@drawable/ic_boiler"/>
+
+    <item android:id="@+id/menu_main"
+        android:title="@string/menu_item_text_main"
+        android:icon="@drawable/ic_main"/>
+
+    <item android:id="@+id/menu_weight"
+        android:title="@string/menu_item_text_weight"
+        android:icon="@drawable/ic_weight"/>
+
+</menu>

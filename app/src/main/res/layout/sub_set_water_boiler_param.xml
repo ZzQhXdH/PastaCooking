@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/y400"
+    android:layout_height="@dimen/x350"
+    android:padding="@dimen/x10"
+    android:background="@drawable/shape_item">
+
+    <EditText
+        android:id="@+id/editText4"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x8"
+        android:text="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x8"
+        android:text="超时时间:"
+        android:textSize="@dimen/x35"
+        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x8"
+        android:text="设置开水锅炉参数"
+        android:textSize="@dimen/x45"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x8"
+        android:text="加热温度:"
+        android:textSize="@dimen/x35"
+        app:layout_constraintEnd_toStartOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <EditText
+        android:id="@+id/editText3"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/x70"
+        android:layout_marginTop="@dimen/x8"
+        android:text="97"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <Button
+        android:id="@+id/button9"
+        style="@style/ButtonStype"
+        android:layout_width="@dimen/y280"
+        android:layout_height="@dimen/x90"
+        android:text="设置"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
