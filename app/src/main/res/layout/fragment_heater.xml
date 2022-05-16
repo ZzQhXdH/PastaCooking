@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
+        android:layout_width="@dimen/x400"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView45"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试电磁阀"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve1"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_valve4"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_valve2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView45"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve2"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_valve5"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_valve3"
+            app:layout_constraintStart_toEndOf="@+id/id_sw_valve1"
+            app:layout_constraintTop_toBottomOf="@+id/textView45"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve3"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_valve6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_sw_valve2"
+            app:layout_constraintTop_toBottomOf="@+id/textView45"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve4"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_valve7"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_valve5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_valve1"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve5"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_valve8"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_valve6"
+            app:layout_constraintStart_toEndOf="@+id/id_sw_valve4"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_valve2"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve6"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_valve9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_sw_valve5"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_valve3"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve7"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_valve8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_valve4"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve8"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_valve9"
+            app:layout_constraintStart_toEndOf="@+id/id_sw_valve7"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_valve5"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_valve9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_valve9"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_sw_valve8"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_valve6"
+            app:showText="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout9"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout9">
+
+        <TextView
+            android:id="@+id/textView46"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试水泵"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_pump_water"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_pump_water"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_water_pump"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_pump_steam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView46"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_pump_steam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_steam_pump"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_pump_nozzle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_pump_water"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_pump_nozzle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_pump_nozzle"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_pump_steam"
+            app:showText="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout12"
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/y140"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout11"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout11">
+
+        <TextView
+            android:id="@+id/textView47"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试加热器"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_heater_water"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_heater_water"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_heater_water"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toTopOf="@+id/id_sw_heater_steam"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView47"
+            app:showText="true" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_heater_steam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_heater_steam"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_sw_heater_water"
+            app:showText="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout10"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
+
+        <TextView
+            android:id="@+id/textView48"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试喷嘴电机"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_nozzle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView49"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x20"
+            android:text="离零点距离:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_nozzle"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_nozzle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_nozzle" />
+
+        <EditText
+            android:id="@+id/id_input_nozzle"
+            style="@style/InputStype"
+            android:text="100"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:layout_marginEnd="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_nozzle_exec"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+        <Button
+            android:id="@+id/id_btn_nozzle_reset"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="复位"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_nozzle_exec"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_nozzle" />
+
+        <Button
+            android:id="@+id/id_btn_nozzle_exec"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="执行"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_nozzle_reset"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_nozzle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout15"
+        android:layout_width="@dimen/x220"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout10"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout10">
+
+        <TextView
+            android:id="@+id/textView50"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试喷嘴放水"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_draw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView51"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:text="放水体积:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_draw"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_draw"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_draw" />
+
+        <EditText
+            android:id="@+id/id_input_draw"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:layout_marginEnd="@dimen/x10"
+            android:text="50"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_draw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView51"
+            app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+        <Button
+            android:id="@+id/id_btn_draw"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="放水"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_draw" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout17"
+        android:layout_width="@dimen/x730"
+        android:layout_height="@dimen/y230"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout12"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout12">
+
+        <TextView
+            android:id="@+id/textView52"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="传感器"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView53"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="喷嘴电机:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+        <TextView
+            android:id="@+id/id_tv_nozzle"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView53"
+            app:layout_constraintTop_toTopOf="@+id/textView53" />
+
+        <TextView
+            android:id="@+id/textView54"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="开水锅炉温度:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+        <TextView
+            android:id="@+id/id_tv_water_temp"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView54"
+            app:layout_constraintTop_toTopOf="@+id/textView54" />
+
+        <TextView
+            android:id="@+id/textView55"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="蒸汽锅炉温度:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView56"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+        <TextView
+            android:id="@+id/id_tv_steam_temp"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView55"
+            app:layout_constraintTop_toTopOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/textView56"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="蒸汽锅炉压力:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView58"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/id_tv_steam_kpa"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView56"
+            app:layout_constraintTop_toTopOf="@+id/textView56" />
+
+        <TextView
+            android:id="@+id/textView58"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="流量计数据:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView59"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+        <TextView
+            android:id="@+id/id_tv_flow"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView58"
+            app:layout_constraintTop_toTopOf="@+id/textView58" />
+
+        <TextView
+            android:id="@+id/textView59"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="工作模式:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+        <TextView
+            android:id="@+id/id_tv_work_type"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView59"
+            app:layout_constraintTop_toTopOf="@+id/textView59" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_nozzle_origin"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_nozzle_fault"
+            app:layout_constraintStart_toEndOf="@+id/id_tv_nozzle"
+            app:layout_constraintTop_toBottomOf="@+id/textView52"
+            app:text="喷嘴电机零点" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_nozzle_fault"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_water_temp_fault"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_nozzle_origin"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_nozzle_origin"
+            app:text="喷嘴电机故障" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_water_temp_fault"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_nozzle_bottom_origin"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_nozzle_fault"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_nozzle_fault"
+            app:text="开水锅炉温度传感器故障" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_steam_temp_fult"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintEnd_toStartOf="@+id/id_cv_water_high"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_nozzle_origin"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_nozzle_origin"
+            app:text="蒸汽锅炉温度传感器故障" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_leak"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_steam_temp_fult"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_nozzle_fault"
+            app:text="漏水" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_water_low"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_leak"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_water_temp_fault"
+            app:text="开水锅炉低水位" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_water_high"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_steam_temp_fult"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_steam_temp_fult"
+            app:text="开水锅炉高水位" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_steam_low"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_water_high"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_leak"
+            app:text="蒸汽锅炉低水位" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_steam_high"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_steam_low"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_water_low"
+            app:text="蒸汽锅炉高水位" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_nozzle_bottom_origin"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_water_temp_fault"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_water_temp_fault"
+            app:text="喷嘴电机下零点" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout13"
+        android:layout_width="@dimen/x220"
+        android:layout_height="@dimen/y200"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout10"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
+
+        <TextView
+            android:id="@+id/textView57"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置开水锅炉加热参数"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_water_temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView60"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="加热温度:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_water_temp"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_water_temp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_water_temp" />
+
+        <EditText
+            android:id="@+id/id_input_water_temp"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="95"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_water_timeout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView60"
+            app:layout_constraintTop_toBottomOf="@+id/textView57" />
+
+        <TextView
+            android:id="@+id/textView61"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="超时时间:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_water_timeout"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_water_timeout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_water_timeout" />
+
+        <EditText
+            android:id="@+id/id_input_water_timeout"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="30"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_water_set"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView61"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_water_temp" />
+
+        <Button
+            android:id="@+id/id_btn_water_set"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="设置"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_water_timeout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout14"
+        android:layout_width="@dimen/x220"
+        android:layout_height="@dimen/y250"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout13"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout13">
+
+        <TextView
+            android:id="@+id/textView63"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置蒸汽锅炉加热参数"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_steam_temp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView62"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="加热温度:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_steam_temp"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_steam_temp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_steam_temp" />
+
+        <EditText
+            android:id="@+id/id_input_steam_temp"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="145"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_steam_kpa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView62"
+            app:layout_constraintTop_toBottomOf="@+id/textView63" />
+
+        <TextView
+            android:id="@+id/textView64"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="加热压力:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_steam_kpa"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_steam_kpa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_steam_kpa" />
+
+        <EditText
+            android:id="@+id/id_input_steam_kpa"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="375"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_steam_timeout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView64"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_steam_temp" />
+
+        <TextView
+            android:id="@+id/textView65"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="超时时间:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_steam_timeout"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_steam_timeout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_steam_timeout" />
+
+        <EditText
+            android:id="@+id/id_input_steam_timeout"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="30"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_steam_set"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView65"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_steam_kpa" />
+
+        <Button
+            android:id="@+id/id_btn_steam_set"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="设置"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_steam_timeout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y200"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout14"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout14">
+
+        <TextView
+            android:id="@+id/textView68"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置抽水参数"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_draw_water_timeout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView66"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x120"
+            android:layout_height="wrap_content"
+            android:text="开水超时时间:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_draw_water_timeout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_draw_water_timeout" />
+
+        <EditText
+            android:id="@+id/id_input_draw_water_timeout"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="30"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_draw_steam_timeout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView66"
+            app:layout_constraintTop_toBottomOf="@+id/textView68" />
+
+        <TextView
+            android:id="@+id/textView67"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x120"
+            android:layout_height="wrap_content"
+            android:text="蒸汽超时时间:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_draw_steam_timeout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_draw_steam_timeout" />
+
+        <EditText
+            android:id="@+id/id_input_draw_steam_timeout"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="30"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_draw_set"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@+id/textView67"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_draw_water_timeout" />
+
+        <Button
+            android:id="@+id/id_btn_draw_set"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="设置"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_draw_steam_timeout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout16"
+        android:layout_width="@dimen/x230"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout15"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout15">
+
+        <TextView
+            android:id="@+id/textView69"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置流量计参数"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_input_flow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView70"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="每升脉冲数量:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_input_flow"
+            app:layout_constraintEnd_toStartOf="@+id/id_input_flow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_input_flow" />
+
+        <EditText
+            android:id="@+id/id_input_flow"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y40"
+            android:text="3300"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_flow_set"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView70"
+            app:layout_constraintTop_toBottomOf="@+id/textView69" />
+
+        <Button
+            android:id="@+id/id_btn_flow_set"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="设置"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_input_flow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/id_sub_clean"
+        layout="@layout/sub_boiler_clean"
+        android:layout_width="@dimen/x220"
+        android:layout_height="@dimen/y280"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/id_sub_cooking"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout17" />
+
+    <include
+        android:id="@+id/id_sub_cooking"
+        layout="@layout/sub_boiler_cooking"
+        android:layout_width="@dimen/x440"
+        android:layout_height="@dimen/y380"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout16"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout17" />
+
+    <com.hontech.pastacooking.activity.view.LogView
+        android:id="@+id/id_log_view"
+        android:layout_width="@dimen/x750"
+        android:layout_height="@dimen/y300"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout13"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout14" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y220"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout17"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout17">
+
+        <TextView
+            android:id="@+id/textView71"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="其他功能"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/id_btn_query"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="查询参数"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_quit_delivery"
+            app:layout_constraintEnd_toStartOf="@+id/id_sw_fan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/id_sw_fan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="风扇"
+            android:textOff="@string/text_close"
+            android:textOn="@string/text_open"
+            android:theme="@style/SwitchStyle"
+            android:thumb="@drawable/sw_thumb"
+            app:layout_constraintBottom_toBottomOf="@+id/id_btn_query"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_query"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_query"
+            app:showText="true" />
+
+        <Button
+            android:id="@+id/id_btn_quit_delivery"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="退出出货模式"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_reset"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_enter_delivery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_btn_query" />
+
+        <Button
+            android:id="@+id/id_btn_enter_delivery"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="进入出货模式"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_quit_delivery"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_quit_delivery" />
+
+        <Button
+            android:id="@+id/id_btn_reset"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="重启"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_btn_quit_delivery"
+            app:layout_constraintTop_toBottomOf="@+id/id_btn_quit_delivery" />
+
+        <Button
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:id="@+id/id_btn_shutdown"
+            android:text="停机"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toStartOf="@+id/id_btn_enter_delivery"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_reset" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

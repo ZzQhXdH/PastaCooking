@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="@dimen/x220"
+        android:layout_height="@dimen/y250"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        android:padding="@dimen/x10"
+        android:background="@drawable/shape_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView25"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_position"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView26"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/id_tv_position"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_adc11"
+            app:layout_constraintStart_toEndOf="@+id/textView25"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_editor_absoluteX="@dimen/x120" />
+
+        <TextView
+            android:id="@+id/textView26"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/test_adc11"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/id_tv_adc11"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/test_adc12"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_adc12"
+            app:layout_constraintStart_toEndOf="@+id/textView26"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_position"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y30" />
+
+        <TextView
+            android:id="@+id/textView27"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_adc12"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView28"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+        <TextView
+            android:id="@+id/id_tv_adc12"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_rotate"
+            app:layout_constraintStart_toEndOf="@+id/textView27"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_adc11"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y60" />
+
+        <TextView
+            android:id="@+id/textView28"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_cargo_rotate"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView29"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/id_tv_rotate"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_elevator"
+            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_adc12"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y90" />
+
+        <TextView
+            android:id="@+id/textView29"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_cargo_elevator"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView30"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <TextView
+            android:id="@+id/id_tv_elevator"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_fetch"
+            app:layout_constraintStart_toEndOf="@+id/textView29"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_rotate"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y120" />
+
+        <TextView
+            android:id="@+id/textView30"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_fetch"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView31"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <TextView
+            android:id="@+id/id_tv_fetch"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_heat"
+            app:layout_constraintStart_toEndOf="@+id/textView30"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_elevator"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y150" />
+
+        <TextView
+            android:id="@+id/textView31"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_heat_door"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <TextView
+            android:id="@+id/id_tv_heat"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_pasta"
+            app:layout_constraintStart_toEndOf="@+id/textView31"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_fetch"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y180" />
+
+        <TextView
+            android:id="@+id/textView32"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_pasta_door"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView33"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/id_tv_pasta"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_extern"
+            app:layout_constraintStart_toEndOf="@+id/textView32"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_heat"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y210" />
+
+        <TextView
+            android:id="@+id/textView33"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_extern_push"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView43"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+        <TextView
+            android:id="@+id/id_tv_extern"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/id_tv_pick"
+            app:layout_constraintStart_toEndOf="@+id/textView33"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_pasta"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y240" />
+
+        <TextView
+            android:id="@+id/textView43"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_pick_door"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+        <TextView
+            android:id="@+id/id_tv_pick"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="@string/text_unknown"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView43"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_extern"
+            app:layout_editor_absoluteX="@dimen/x120"
+            app:layout_editor_absoluteY="@dimen/y270" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="@dimen/y690"
+        android:layout_height="@dimen/x250"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_rotate_origin"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_rotate_fault"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text="@string/text_rotate_origin" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_rotate_fault"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_elevator_origin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_rotate_origin"
+            app:text="@string/text_rotate_fault" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_elevator_origin"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_elevator_top_origin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_rotate_fault"
+            app:text="@string/text_elevator_origin" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_elevator_top_origin"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_elevator_fault"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_elevator_origin"
+            app:text="@string/text_elevator_top_origin" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_elevator_fault"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_elevator_top_origin"
+            app:text="@string/text_elevator_fault" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_fetch_fault"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginStart="@dimen/x10"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_heat_door_open"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_rotate_origin"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text="@string/text_fetch_fault" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_heat_door_open"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_heat_door_close"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_fetch_fault"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_fetch_fault"
+            app:text="@string/text_heat_open" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_heat_door_close"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_extern_push_origin"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_heat_door_open"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_heat_door_open"
+            app:text="@string/text_heat_close" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_extern_push_origin"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_extern_push_fault"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_heat_door_close"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_heat_door_close"
+            app:text="@string/text_extern_origin" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_extern_push_fault"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_extern_push_origin"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_extern_push_origin"
+            app:text="@string/text_extern_fault" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pasta_door_open"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginStart="@dimen/x10"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_pasta_door_close"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_fetch_fault"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text="@string/text_pasta_open" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pasta_door_close"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_pick_door_open"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_pasta_door_open"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_pasta_door_open"
+            app:text="@string/text_pasta_close" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pick_door_open"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_pick_door_close"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_pasta_door_close"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_pasta_door_close"
+            app:text="@string/text_pick_open" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pick_door_close"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_pick_door_raster"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_pick_door_open"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_pick_door_open"
+            app:text="@string/text_pick_close" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pick_door_raster"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_pick_door_close"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_pick_door_close"
+            app:text="@string/text_pick_raster" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pick_door_protect"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginStart="@dimen/x10"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_pasta_exist"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_pasta_door_open"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text="@string/text_pick_protect" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_pasta_exist"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_cargo_key"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_pick_door_protect"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_pick_door_protect"
+            app:text="@string/text_pasta_exist" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_cargo_key"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_fridge_close"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_pasta_exist"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_pasta_exist"
+            app:text="@string/text_cargo_key" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_fridge_close"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_door_close"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_cargo_key"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_cargo_key"
+            app:text="@string/text_fridge_close" />
+
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_door_close"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_fridge_close"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_fridge_close"
+            app:text="@string/text_door_close" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.hontech.pastacooking.activity.view.CheckView
+        android:id="@+id/id_cv_thaw"
+        android:layout_width="@dimen/x160"
+        android:layout_height="@dimen/y40"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text="@string/text_thaw" />
+
+    <com.hontech.pastacooking.activity.view.CheckView
+        android:id="@+id/id_cv_clean"
+        android:layout_width="@dimen/x160"
+        android:layout_height="@dimen/y40"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/id_cv_thaw"
+        app:layout_constraintTop_toBottomOf="@+id/id_cv_thaw"
+        app:text="@string/text_clean" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y180"
+        android:layout_marginTop="@dimen/x10"
+        android:padding="@dimen/x10"
+        android:background="@drawable/shape_item"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/textView34"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="货架旋转"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView35"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="列:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="@+id/id_sp_cols"
+            app:layout_constraintEnd_toStartOf="@+id/id_sp_cols"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_sp_cols" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/id_sp_cols"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y55"
+            android:layout_marginTop="@dimen/x10"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_rotate_exec"
+            app:layout_constraintStart_toEndOf="@+id/textView35"
+            app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+        <Button
+            android:id="@+id/id_btn_rotate_reset"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="复位"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toEndOf="@+id/id_btn_rotate_exec"
+            app:layout_constraintTop_toBottomOf="@+id/id_sp_cols" />
+
+        <Button
+            android:id="@+id/id_btn_rotate_exec"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="执行"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_sp_cols"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_sp_cols"
+            app:layout_constraintTop_toTopOf="@+id/id_sp_cols" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout4">
+
+        <TextView
+            android:id="@+id/textView36"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="升降"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView37"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="行:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="@+id/id_sp_rows"
+            app:layout_constraintEnd_toStartOf="@+id/id_sp_rows"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_sp_rows" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/id_sp_rows"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y55"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_elevator_exec"
+            app:layout_constraintStart_toEndOf="@+id/textView37"
+            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+        <Button
+            android:id="@+id/id_btn_elevator_exec"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="执行"
+            app:layout_constraintBottom_toBottomOf="@+id/id_sp_rows"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_sp_rows"
+            app:layout_constraintTop_toTopOf="@+id/id_sp_rows" />
+
+        <Button
+            android:id="@+id/id_btn_elevator_reset"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="复位"
+            app:layout_constraintEnd_toEndOf="@+id/id_btn_elevator_exec"
+            app:layout_constraintTop_toBottomOf="@+id/id_sp_rows" />
+
+        <Button
+            android:id="@+id/id_btn_elevator_heat"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginEnd="@dimen/x10"
+            android:text="升至保温门"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_elevator_reset"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_elevator_reset" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout7"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y180"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout5">
+
+        <TextView
+            android:id="@+id/textView38"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取货机械手"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/id_btn_fetch_adj"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="校准"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_fetch_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+        <Button
+            android:id="@+id/id_btn_fetch_left"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="转到左边"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_fetch_adj"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_fetch_adj" />
+
+        <Button
+            android:id="@+id/id_btn_fetch_center"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="转到中间"
+            app:layout_constraintStart_toStartOf="@+id/id_btn_fetch_adj"
+            app:layout_constraintTop_toBottomOf="@+id/id_btn_fetch_adj" />
+
+        <Button
+            android:id="@+id/id_btn_fetch_right"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="转到右边"
+            app:layout_constraintEnd_toEndOf="@+id/id_btn_fetch_left"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_fetch_center" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y110"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+        <TextView
+            android:id="@+id/textView39"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保温门"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/id_btn_heat_open"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="打开"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_heat_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <Button
+            android:id="@+id/id_btn_heat_close"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="关闭"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_heat_open"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_heat_open" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y230"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout5"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout6">
+
+        <TextView
+            android:id="@+id/textView40"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="外推货"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView41"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="距离:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="@+id/editText17"
+            app:layout_constraintEnd_toStartOf="@+id/editText17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editText17" />
+
+        <EditText
+            android:id="@+id/editText17"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_extern_exec"
+            app:layout_constraintStart_toEndOf="@+id/textView41"
+            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+        <Button
+            android:id="@+id/id_btn_extern_exec"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="执行"
+            app:layout_constraintBottom_toBottomOf="@+id/editText17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editText17"
+            app:layout_constraintTop_toTopOf="@+id/editText17" />
+
+        <Button
+            android:id="@+id/id_btn_extern_reset"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="复位"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_extern_adj"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_btn_extern_exec" />
+
+        <Button
+            android:id="@+id/id_btn_extern_adj"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="校准推货位置"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_extern_reset"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_extern_reset" />
+
+        <Button
+            android:id="@+id/id_btn_extern_back"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="后退"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_extern_front"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_btn_extern_reset" />
+
+        <Button
+            android:id="@+id/id_btn_extern_front"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="前进"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_extern_back"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_extern_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y110"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
+
+        <TextView
+            android:id="@+id/textView42"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="煮面室内门"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/id_btn_pasta_open"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="打开"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_pasta_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <Button
+            android:id="@+id/id_btn_pasta_close"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="关闭"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_pasta_open"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_pasta_open" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y110"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout7"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout8">
+
+        <TextView
+            android:id="@+id/textView44"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取物门"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/id_btn_pick_open"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x10"
+            android:text="打开"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_pick_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+        <Button
+            android:id="@+id/id_btn_pick_close"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="关闭"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_pick_open"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_pick_open" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.hontech.pastacooking.activity.view.LogView
+        android:id="@+id/id_log_view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/y300"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginEnd="@dimen/x10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/id_cv_thaw"
+        app:layout_constraintTop_toTopOf="@+id/id_cv_thaw" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y170"
+        android:layout_marginStart="@dimen/x16"
+        android:layout_marginTop="@dimen/x16"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView23"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_port_title"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView24"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_port_name"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_spinner"
+            app:layout_constraintEnd_toStartOf="@+id/id_spinner"
+            app:layout_constraintStart_toStartOf="@+id/textView23"
+            app:layout_constraintTop_toTopOf="@+id/id_spinner" />
+
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/id_spinner"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y55"
+            android:layout_marginTop="@dimen/x8"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <Button
+            android:id="@+id/id_btn_open"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/x8"
+            android:text="@string/text_port_open"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_spinner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/y220"
+        android:layout_height="@dimen/x120"
+        android:layout_marginStart="@dimen/x8"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/id_text_view_main_version"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="主控板软件版本:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_text_view_heator_version"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/id_text_view_heator_version"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="加热板软件版本:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toTopOf="@+id/id_text_view_weight_version"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_text_view_main_version" />
+
+        <TextView
+            android:id="@+id/id_text_view_weight_version"
+            style="@style/TextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="称重板软件版本:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_text_view_heator_version" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        layout="@layout/sub_soft_list"
+        android:id="@+id/id_soft_list_main"
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y600"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x10"
+        android:id="@+id/id_text_view_mac"
+        android:text="设备MAC地址:"
+        android:textSize="@dimen/x30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

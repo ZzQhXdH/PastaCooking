@@ -3,7 +3,7 @@ package com.hontech.pastacooking.serial
 import com.hontech.pastacooking.ext.setUInt16
 import com.hontech.pastacooking.ext.toUInt16
 
-class ByteView (var value: ByteArray = byteArrayOf(), var offset: Int = 0, var size: Int = value.size - offset) : SerialType {
+data class ByteView (var value: ByteArray = byteArrayOf(), var offset: Int = 0, var size: Int = value.size - offset) : SerialType {
 
     override fun size(): Int {
         return 2 + size

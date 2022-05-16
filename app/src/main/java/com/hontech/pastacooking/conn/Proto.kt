@@ -4,6 +4,7 @@ import com.hontech.pastacooking.ext.checkSum
 import com.hontech.pastacooking.ext.setUInt16
 import com.hontech.pastacooking.ext.setUInt8
 import com.hontech.pastacooking.serial.SerialType
+import java.lang.IllegalStateException
 
 object Proto {
 
@@ -15,8 +16,8 @@ object Proto {
 
     const val Ack = 0x00
 
-    fun make(dest: Int, req: Int, vararg args: SerialType): ByteArray {
-        val size = size() + 10
+    fun make(dest: Int, req: Int, args: Array<SerialType>): ByteArray {
+        val size = size(*args) + 10
         val buf = ByteArray(size)
         buf.setUInt16(0, Head)
         buf.setUInt16(2, size)
@@ -40,6 +41,14 @@ object Proto {
             index += arg.size()
         }
         return index
+    }
+
+    fun errMsgByAddr(addr: Int, ec: Int): String {
+        when (addr) {
+            Addr.Main -> return MainProto.errMsg(ec)
+            Addr.Heator -> return HeaterProto.errMsg(ec)
+            else -> throw IllegalStateException("未知地址:${addr}")
+        }
     }
 }
 

@@ -1,9 +1,11 @@
 package com.hontech.pastacooking.serial
 
+import com.hontech.pastacooking.conn.HeaterProto
+import com.hontech.pastacooking.conn.MainProto
 import com.hontech.pastacooking.ext.setUInt8
 import com.hontech.pastacooking.ext.toUInt8
 
-class UInt8 (var value: Int = 0) : SerialType {
+data class UInt8 (var value: Int = 0) : SerialType {
 
     override fun size(): Int {
         return 1
@@ -16,5 +18,19 @@ class UInt8 (var value: Int = 0) : SerialType {
     override fun encode(buf: ByteArray, index: Int) {
         buf.setUInt8(index, value)
     }
+
+    override fun toString(): String {
+        return "$value"
+    }
+
+    fun mainErrMsg(): String {
+        return MainProto.errMsg(value)
+    }
+
+    fun heaterErrMsg(): String {
+        return HeaterProto.errMsg(value)
+    }
+
+    fun isOk() = value == 0
 }
 

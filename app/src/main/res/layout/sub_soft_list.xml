@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/y300"
+    android:layout_height="@dimen/x600"
+    android:background="@drawable/shape_item"
+    android:padding="@dimen/x10">
+
+    <TextView
+        android:id="@+id/id_soft_list_tv_title"
+        style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="软件版本:"
+        android:textSize="@dimen/x20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/id_soft_list_rv"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_soft_list_tv_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

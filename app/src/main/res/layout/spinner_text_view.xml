@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:text="项目-"
     android:id="@+id/id_item_sp_text_view"
+    android:textSize="@dimen/x30"
     style="@style/TextViewStyle">
 
 </TextView>

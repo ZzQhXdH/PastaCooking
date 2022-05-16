@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hontech.pastacooking">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".app.PastaCookingApp"
         android:allowBackup="true"
@@ -11,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PastaCooking">
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

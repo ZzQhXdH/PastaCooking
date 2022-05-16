@@ -24,6 +24,8 @@ public:
 
     void read(ByteBuf &buf, std::error_code &ec);
 
+    void close();
+
 private:
     std::unique_ptr<Impl> impl;
 };

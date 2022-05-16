@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/x330"
+    android:layout_height="@dimen/y300"
+    android:background="@drawable/shape_item"
+    android:padding="@dimen/x10">
+
+    <Button
+        android:id="@+id/id_btn_close"
+        android:layout_width="@dimen/x50"
+        android:layout_height="@dimen/y50"
+        android:background="@drawable/btn_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView72"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="开水锅炉加热温度:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView73"
+        app:layout_constraintEnd_toStartOf="@+id/id_tv_water_temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_btn_close" />
+
+    <TextView
+        android:id="@+id/id_tv_water_temp"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView72"
+        app:layout_constraintTop_toTopOf="@+id/textView72" />
+
+    <TextView
+        android:id="@+id/textView73"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="开水锅炉加热超时时间:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView74"
+        app:layout_constraintStart_toStartOf="@+id/textView72"
+        app:layout_constraintTop_toBottomOf="@+id/textView72" />
+
+    <TextView
+        android:id="@+id/id_tv_water_timeout"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_water_temp"
+        app:layout_constraintTop_toTopOf="@+id/textView73" />
+
+    <TextView
+        android:id="@+id/textView74"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="蒸汽锅炉加热温度:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView75"
+        app:layout_constraintStart_toStartOf="@+id/textView73"
+        app:layout_constraintTop_toBottomOf="@+id/textView73" />
+
+    <TextView
+        android:id="@+id/id_tv_steam_temp"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_water_timeout"
+        app:layout_constraintTop_toTopOf="@+id/textView74" />
+
+    <TextView
+        android:id="@+id/textView75"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="蒸汽锅炉加热压力:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView76"
+        app:layout_constraintStart_toStartOf="@+id/textView74"
+        app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+    <TextView
+        android:id="@+id/id_tv_steam_kpa"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_steam_temp"
+        app:layout_constraintTop_toTopOf="@+id/textView75" />
+
+    <TextView
+        android:id="@+id/textView76"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="蒸汽锅炉加热超时时间:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView77"
+        app:layout_constraintStart_toStartOf="@+id/textView75"
+        app:layout_constraintTop_toBottomOf="@+id/textView75" />
+
+    <TextView
+        android:id="@+id/id_tv_steam_timeout"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_steam_kpa"
+        app:layout_constraintTop_toTopOf="@+id/textView76" />
+
+    <TextView
+        android:id="@+id/textView77"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="抽开水锅炉超时时间:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView78"
+        app:layout_constraintStart_toStartOf="@+id/textView76"
+        app:layout_constraintTop_toBottomOf="@+id/textView76" />
+
+    <TextView
+        android:id="@+id/id_tv_draw_water_timeout"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_steam_timeout"
+        app:layout_constraintTop_toTopOf="@+id/textView77" />
+
+    <TextView
+        android:id="@+id/textView78"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="抽蒸汽锅炉超时时间"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/textView79"
+        app:layout_constraintStart_toStartOf="@+id/textView77"
+        app:layout_constraintTop_toBottomOf="@+id/textView77" />
+
+    <TextView
+        android:id="@+id/id_tv_draw_steam_timeout"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_draw_water_timeout"
+        app:layout_constraintTop_toTopOf="@+id/textView78" />
+
+    <TextView
+        android:id="@+id/textView79"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:text="每升水脉冲数:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView78"
+        app:layout_constraintTop_toBottomOf="@+id/textView78" />
+
+    <TextView
+        android:id="@+id/id_tv_flow"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="未知"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_tv_draw_steam_timeout"
+        app:layout_constraintTop_toTopOf="@+id/textView79" />
+    
+    
+</androidx.constraintlayout.widget.ConstraintLayout>

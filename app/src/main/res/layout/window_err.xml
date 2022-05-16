@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/y320"
+    android:layout_height="@dimen/x320"
+    android:background="@drawable/shape_item"
+    android:layout_margin="@dimen/x10">
+
+    <Button
+        android:layout_width="@dimen/x50"
+        android:layout_height="@dimen/y50"
+        android:id="@+id/id_btn_close"
+        android:layout_marginTop="@dimen/x10"
+        android:layout_marginEnd="@dimen/x10"
+        android:background="@drawable/btn_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/x180"
+        android:layout_height="@dimen/y180"
+        android:layout_marginTop="@dimen/x25"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_err"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/x10"
+        android:gravity="center"
+        android:text="错误信息"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x30"
+        android:id="@+id/id_text_view_msg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

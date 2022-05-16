@@ -1,12 +1,14 @@
 package com.hontech.pastacooking.conn
 
+import com.hontech.pastacooking.app.log
+import com.hontech.pastacooking.ext.toHex
 import com.hontech.pastacooking.ext.toUInt16
 import com.hontech.pastacooking.ext.toUInt8
+import com.hontech.pastacooking.utils.Sync
+import com.hontech.pastacooking.utils.SyncValue
 import java.io.IOException
-import java.lang.Exception
-import java.lang.IllegalStateException
 
-class ReaderTask (val port: SerialPort, val sync: Sync) : Thread("read-task") {
+class ReaderTask (val port: SerialPort, val syncAck: Sync, val syncValue: SyncValue<Frame>) : Thread("read-task") {
 
     override fun run() {
 
@@ -20,7 +22,7 @@ class ReaderTask (val port: SerialPort, val sync: Sync) : Thread("read-task") {
             }
         }
 
-
+        log("reader task quit")
     }
 
     private fun exec() {
@@ -38,30 +40,31 @@ class ReaderTask (val port: SerialPort, val sync: Sync) : Thread("read-task") {
     }
 
     private fun dispatch(frame: Frame) {
-        val req = frame.request()
 
-        if (req == Proto.Ack) {
-            sync.signal()
+        if (frame.isAck()) {
+            syncAck.signal()
             return
         }
+
+        if (!frame.isNotify()) {
+            syncValue.signal(frame)
+            log("read:${frame.data.toHex()}")
+            return
+        }
+
         when (frame.src) {
-            Addr.Main -> onForMain(frame)
-            Addr.Heator -> onForHeator(frame)
+            Addr.Main -> MainProto.onRecv(frame)
+            Addr.Heator -> HeaterProto.onRecv(frame)
             Addr.Weight -> onForWeight(frame)
             else -> throw IllegalStateException("未知的设备地址")
         }
     }
 
-    private fun onForMain(frame: Frame) {
-
-    }
-
-    private fun onForHeator(frame: Frame) {
-
-    }
-
     private fun onForWeight(frame: Frame) {
 
     }
+
 }
+
+
 

@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 set(VCPKG_TARGET_ANDROID ON)
-set(ANDROID_ABI arm64-v8a)
+#set(ANDROID_ABI arm64-v8a)
 
 set(VCPKG_TARGET_TRIPLET "arm64-android" CACHE STRING "" FORCE)
 

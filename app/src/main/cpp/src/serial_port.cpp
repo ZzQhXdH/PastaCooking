@@ -7,10 +7,87 @@
 #include "alg.h"
 #include "decode.h"
 #include "error.h"
+#include "log.h"
 
 constexpr uint8_t Head0 = 0xE1;
 constexpr uint8_t Head1 = 0x1E;
 constexpr uint8_t End = 0xEF;
+
+struct FrameReader {
+
+public:
+    FrameReader(asio::serial_port &p, ByteBuf &b, std::error_code &ece) : port(p), buf(b), ec(ece) {}
+
+    void read() {
+        read_head();
+    }
+
+private:
+    void read_head() {
+        port.async_read_some(asio::buffer(&tmp, 1),
+                             [this](const std::error_code &e, size_t) {
+            if (e) {
+                this->ec = e;
+                return;
+            }
+            if (this->flag && (this->tmp == Head1)) {
+                this->read_len();
+                return;
+            }
+            this->flag = (this->tmp == Head0);
+            this->read_head();
+        });
+    }
+
+    void read_len() {
+        asio::async_read(port, asio::buffer(len_buf, 2),
+                   [this](const std::error_code &e, size_t) {
+            if (e) {
+                this->ec = e;
+                return;
+            }
+            uint16_t len = decode_uint16(len_buf);
+            if (len < 10) {
+                this->ec = make_ec(EC_LEN_FAIL);
+                return;
+            }
+            this->read_body(len);
+        });
+    }
+
+    void read_body(uint16_t len) {
+        len = len - 4;
+        buf.resize(len);
+        asio::async_read(port, asio::buffer(buf),
+                   [this] (const std::error_code &e, size_t) {
+            if (e) {
+                this->ec = e;
+                return;
+            }
+            const uint8_t *data = buf.data();
+            uint16_t len = buf.size();
+            // dest(0), src(1), req(2), data(4)
+            uint8_t sum = xor_sum(data + 4, len - 6);
+            if (sum != data[len - 2]) {
+                this->ec = make_ec(EC_SUM_FAIL);
+                return;
+            }
+
+            if (End != data[len - 1]) {
+                this->ec = make_ec(EC_END_FAIL);
+                return;
+            }
+        });
+    }
+
+private:
+    asio::serial_port &port;
+    ByteBuf &buf;
+    std::error_code &ec;
+    uint8_t tmp{};
+    bool flag = false;
+    uint8_t len_buf[2]{};
+};
 
 struct SerialPort::Impl {
     asio::io_context ctx;
@@ -33,71 +110,27 @@ struct SerialPort::Impl {
         return true;
     }
 
+    [[nodiscard]] bool is_open() const {
+        return port.is_open();
+    }
+
+    void close() {
+        std::error_code ec;
+        port.close(ec);
+    }
+
+
     bool write(const uint8_t *buf, uint32_t size) {
         std::error_code ec;
         asio::write(port, asio::buffer(buf, size), ec);
         return !ec;
     }
 
-    void sync(std::error_code &ec) {
-        bool flag = false;
-        uint8_t v;
-        for (;;) {
-            asio::read(port, asio::buffer(&v, 1), ec);
-            if (ec) {
-                return;
-            }
-            if (flag && (v == Head1)) {
-                return;
-            }
-            flag = (v == Head0);
-        }
-    }
-
-    uint16_t readLen(std::error_code &ec) {
-        uint8_t buf[2];
-        asio::read(port, asio::buffer(buf, 2), ec);
-        if (ec) {
-            return 0;
-        }
-        return decode_uint16(buf);
-    }
-
     void read(ByteBuf &buf, std::error_code &ec) {
-        sync(ec);
-        if (ec) {
-            return;
-        }
-
-        uint16_t len = readLen(ec);
-        if (ec) {
-            return;
-        }
-
-        if (len < 10) {
-            ec = make_ec(EC_LEN_FAIL);
-            return;
-        }
-
-        len -= 4;
-        buf.resize(len);
-        asio::read(port, asio::buffer(buf), ec);
-        if (ec) {
-            return;
-        }
-
-        // dest(0), src(1), req(2), data(4)
-        const uint8_t *data = buf.data();
-        uint8_t sum = xor_sum(data + 4, len - 6);
-        if (sum != data[len - 2]) {
-            ec = make_ec(EC_SUM_FAIL);
-            return;
-        }
-
-        if (End != data[len - 1]) {
-            ec = make_ec(EC_END_FAIL);
-            return;
-        }
+        FrameReader reader(port, buf, ec);
+        reader.read();
+        ctx.restart();
+        ctx.run();
     }
 };
 
@@ -108,7 +141,9 @@ SerialPort::SerialPort() :
 }
 
 SerialPort::~SerialPort() {
-
+    if (impl->is_open()) {
+        impl->close();
+    }
 }
 
 bool SerialPort::open(const std::string &name) {
@@ -121,6 +156,10 @@ void SerialPort::write(const uint8_t *buf, uint32_t size) {
 
 void SerialPort::read(ByteBuf &buf, std::error_code &ec) {
     impl->read(buf, ec);
+}
+
+void SerialPort::close() {
+    impl->close();
 }
 
 

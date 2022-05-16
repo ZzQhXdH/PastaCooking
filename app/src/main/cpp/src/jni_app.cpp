@@ -4,17 +4,16 @@
 
 #include <jni.h>
 #include "serial_port.h"
-#include <android/log.h>
+#include "log.h"
 
 
 extern "C"
 JNIEXPORT jlong JNICALL
 Java_com_hontech_pastacooking_conn_SerialPort_open(JNIEnv *env, jobject thiz, jstring name) {
     const char *s = env->GetStringUTFChars(name, nullptr);
-    std::string portName = std::string(s);
-    env->ReleaseStringUTFChars(name, s);
     auto *port = new SerialPort();
-    bool flag = port->open(portName);
+    bool flag = port->open(s);
+    env->ReleaseStringUTFChars(name, s);
     if (flag) {
         return reinterpret_cast<jlong>(port);
     }
@@ -31,8 +30,6 @@ Java_com_hontech_pastacooking_conn_SerialPort_read(JNIEnv *env, jobject thiz, jl
     std::error_code ec;
     port->read(byteBuf, ec);
     if (ec) {
-        auto ms = ec.message();
-        __android_log_print(ANDROID_LOG_ERROR, "port read fail", "%s", ms.c_str());
         return nullptr;
     }
     auto len = static_cast<jsize>(byteBuf.size());
@@ -57,5 +54,15 @@ extern "C"
 JNIEXPORT void JNICALL
 Java_com_hontech_pastacooking_conn_SerialPort_close(JNIEnv *env, jobject thiz, jlong fd) {
     auto port = reinterpret_cast<SerialPort *>(fd);
-    delete port;
+    port->close();
+    debug("close port");
 }
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_hontech_pastacooking_conn_SerialPort_delete(JNIEnv *env, jobject thiz, jlong fd) {
+    auto port = reinterpret_cast<SerialPort *>(fd);
+    delete port;
+    debug("free port");
+}
+
