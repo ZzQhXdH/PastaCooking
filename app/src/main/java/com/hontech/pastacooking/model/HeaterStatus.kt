@@ -13,7 +13,13 @@ class HeaterStatus {
     val sensor = UInt16()
     val flag = UInt16()
     val count = UInt16()
-    val workType = UInt8()
+    val drawType = UInt8()
+    val heatType = UInt8()
+
+    fun isHeatMode() = (heatType.value == 0x01)
+
+    fun isWaterTempOk() = (waterTemp.value >= 93)
+    fun isSteamKpaOk() = (steamKpa.value >= 350)
 
     fun isNozzleOrigin() = sensor.isSetBit(0)
     fun isNozzleFault() = sensor.isSetBit(1)

@@ -1,8 +1,8 @@
 package com.hontech.pastacooking.net
 
-import com.hontech.pastacooking.app.WorkExecutor
 import com.hontech.pastacooking.app.close
 import com.hontech.pastacooking.app.log
+import com.hontech.pastacooking.ext.toHex16
 import com.hontech.pastacooking.ext.toUInt16
 import com.hontech.pastacooking.ext.toUInt32
 import com.hontech.pastacooking.task.net.NetConnTask
@@ -31,21 +31,20 @@ class Reader(socket: Socket, private val sync: SyncValue<Frame>) : Thread() {
         close(input)
         isConnect = false
         log("net-reader quit")
-        WorkExecutor.postDelayed(NetConnTask(), 10 * 1000)
+        NetConnTask.reconnect()
     }
 
     private fun exec() {
         val frame = read()
+        // log("read:$frame")
+
         if (frame.isNotify()) {
-            execNotify(frame)
+            Notify.exec(frame)
             return
         }
         sync.signal(frame)
     }
 
-    private fun execNotify(frame: Frame) {
-
-    }
 
     private fun readn(size: Int): ByteArray {
         val buf = ByteArray(size)
@@ -61,10 +60,10 @@ class Reader(socket: Socket, private val sync: SyncValue<Frame>) : Thread() {
     }
 
     private fun read(): Frame {
-        val buf = ByteArray(8)
+        val buf = readn(8)
         val head = buf.toUInt16(0)
         if (head != Frame.Head) {
-            throw IOException("head fail")
+            throw IOException("head fail:${head.toHex16()}")
         }
         val size = buf.toUInt32(2)
         if (size < 8) {

@@ -8,7 +8,7 @@ import android.widget.FrameLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import com.hontech.pastacooking.R
-import com.hontech.pastacooking.app.AppExecutor
+import com.hontech.pastacooking.app.AppTask
 
 class LogView : FrameLayout {
 
@@ -28,14 +28,14 @@ class LogView : FrameLayout {
 
     fun clear() {
         textView.text = ""
-        AppExecutor.post {
+        AppTask.post {
             scrollView.fullScroll(ScrollView.FOCUS_DOWN)
         }
     }
 
     fun append(text: String) {
         textView.append("${text}\r\n")
-        AppExecutor.post {
+        AppTask.post {
             scrollView.fullScroll(ScrollView.FOCUS_DOWN)
         }
     }

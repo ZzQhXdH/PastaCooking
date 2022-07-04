@@ -9,7 +9,7 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.setWaterHeatParam
 
-class WaterParamDelegate (view: View) {
+class WaterParamDelegate(view: View) {
 
     private val inputTemp = view.findViewById<EditText>(R.id.id_input_water_temp)
     private val inputTimeout = view.findViewById<EditText>(R.id.id_input_water_timeout)

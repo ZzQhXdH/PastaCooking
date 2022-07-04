@@ -1,12 +1,16 @@
 package com.hontech.pastacooking.conn
 
 import com.hontech.pastacooking.app.bus
+import com.hontech.pastacooking.event.CookProgEvent
+import com.hontech.pastacooking.event.FridgeStatusEvent
 import com.hontech.pastacooking.event.MainExceptEvent
+import com.hontech.pastacooking.event.ScanBarcodeEvent
 import com.hontech.pastacooking.ext.MainStatusEvent
 import com.hontech.pastacooking.model.FridgeStatus
 import com.hontech.pastacooking.model.MainStatus
 import com.hontech.pastacooking.serial.ByteView
 import com.hontech.pastacooking.serial.UInt8
+import com.hontech.pastacooking.task.net.NetDelegate
 
 object MainProto {
 
@@ -28,12 +32,51 @@ object MainProto {
     const val Scan = 0x10
     const val SetCleanParam = 0x11
     const val QueryCleanParam = 0x12
+    const val PickupCooking = 0x13
+    const val DeviceReset = 0x14
+    const val TestLed = 0x15
+    const val PreProc = 0x16
 
     val status = MainStatus()
     val fridge = FridgeStatus()
 
+    fun progMsg(step: Int, ec: Int): String {
+        return "${prog(step)}:${errMsg(ec)}"
+    }
+
+    fun prog(step: Int): String {
+        return when (step) {
+            0 -> return "复位各种电机"
+            1 -> return "开始第一次清洗"
+            2 -> return "升降至对应的行"
+            3 -> return "取货转到左边"
+            4 -> return "旋转到对应的列"
+            5 -> return "上升取货"
+            6 -> return "取货转到中间"
+            7 -> return "保温门打开"
+            8 -> return "升到保温门"
+            9 -> return "取货转到右边"
+            10 -> return "第一次清洗结束"
+            11 -> return "煮面室内门打开"
+            12 -> return "外推货前进"
+            13 -> return "外推货后退"
+            14 -> return "煮面室内门关闭"
+            15 -> return "煮面开始"
+            16 -> return "取货复位"
+            17 -> return "保温门关闭"
+            18 -> return "升降复位"
+            19 -> return "旋转复位"
+            20 -> return "煮面完成"
+            21 -> return "取物门打开"
+            22 -> return "取物门关闭"
+            23 -> return "开始第二次清洗"
+            24 -> return "第二次清洗完成"
+            else -> return "未知步骤"
+        }
+    }
+
     fun errMsg(ec: Int): String {
-        when(ec) {
+        when (ec) {
             0x00 -> return "正常"
             0x01 -> return "Flash读写异常"
             0x02 -> return "Flash校验不通过"
@@ -58,7 +101,9 @@ object MainProto {
             0x15 -> return "加热板通信超时"
             0x16 -> return "煮面室内有东西"
             0x17 -> return "设置出货模式超时"
-            else -> return "未知错误"
+            0x18 -> return "取了个空的"
+            0x19 -> return "等待喷嘴复位超时"
+            else -> return HeaterProto.errMsg(ec and 0x7F)
         }
     }
 
@@ -78,10 +123,13 @@ object MainProto {
             status.pick
         )
         bus.post(MainStatusEvent())
+        NetDelegate.onRecvMain(frame.data)
     }
 
     private fun parseFridge(frame: Frame) {
         frame.parse(fridge.sw, fridge.temp)
+        NetDelegate.onRecvFridge(frame.data)
+        bus.post(FridgeStatusEvent())
     }
 
     private fun onExcept(frame: Frame) {
@@ -91,6 +139,23 @@ object MainProto {
         bus.post(MainExceptEvent(ec.value, msg.toString()))
     }
 
+    private fun onBarcode(frame: Frame) {
+        val col = UInt8()
+        val row = UInt8()
+        val err = UInt8()
+        val barcode = ByteView()
+
+        frame.parse(col, row, err, barcode)
+        bus.post(ScanBarcodeEvent(col.value, row.value, err.value, barcode.toString()))
+    }
+
+    private fun onPorg(frame: Frame) {
+        val step = UInt8()
+        val ec = UInt8()
+        frame.parse(step, ec)
+        bus.post(CookProgEvent(progMsg(step.value, ec.value)))
+    }
+
     fun onRecv(frame: Frame) {
         val req = frame.request()
 
@@ -98,6 +163,8 @@ object MainProto {
             Except -> onExcept(frame)
             StatusUpload -> parseStatus(frame)
             FridgeStatusUpload -> parseFridge(frame)
+            Scan -> onBarcode(frame)
+            PickupCooking -> onPorg(frame)
         }
     }
 }

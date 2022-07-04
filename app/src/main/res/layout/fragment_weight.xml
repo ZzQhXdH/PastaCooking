@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout24"
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y330"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水桶信息"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="内部电子秤:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_tv_inside_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_tv_inside_weight" />
+
+        <TextView
+            android:id="@+id/id_tv_inside_weight"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x10"
+            android:text="0g"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView14"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="外部电子秤:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="@+id/id_tv_extern_weight"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/id_tv_extern_weight" />
+
+        <TextView
+            android:id="@+id/id_tv_extern_weight"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x10"
+            android:text="0g"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_inside_weight" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_inside"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_tv_extern_weight"
+            app:text="内部水桶" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_extern"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_inside"
+            app:text="外部水桶" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_inside_ok"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_extern"
+            app:text="内部电子秤正常" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_extern_ok"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_inside_ok"
+            app:text="外部电子秤正常" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x280"
+        android:layout_height="@dimen/y170"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        android:layout_marginStart="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout24"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout24">
+
+        <TextView
+            android:id="@+id/textView17"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="校准电子秤"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView89"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="砝码质量:"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="@+id/id_et_weight"
+            app:layout_constraintEnd_toStartOf="@+id/id_et_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_et_weight" />
+
+        <EditText
+            android:id="@+id/id_et_weight"
+            style="@style/InputStype"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:text="0"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView89"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <Button
+            android:id="@+id/id_btn_adj_inside"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="校准内部"
+            app:layout_constraintBottom_toBottomOf="@+id/id_btn_adj_extern"
+            app:layout_constraintEnd_toStartOf="@+id/id_btn_adj_extern"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_adj_extern" />
+
+        <Button
+            android:id="@+id/id_btn_adj_extern"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="校准外部"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_btn_adj_inside"
+            app:layout_constraintTop_toBottomOf="@+id/id_et_weight" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

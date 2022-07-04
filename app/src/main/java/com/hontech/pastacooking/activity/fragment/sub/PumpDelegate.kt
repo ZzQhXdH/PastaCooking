@@ -9,7 +9,7 @@ import com.hontech.pastacooking.model.HeaterStatus
 import com.hontech.pastacooking.task.conn.testPump
 import kotlinx.coroutines.launch
 
-class PumpDelegate (view: View) {
+class PumpDelegate(view: View) {
 
     private val waterPump = view.findViewById<SwitchCompat>(R.id.id_sw_pump_water)
     private val steamPump = view.findViewById<SwitchCompat>(R.id.id_sw_pump_steam)

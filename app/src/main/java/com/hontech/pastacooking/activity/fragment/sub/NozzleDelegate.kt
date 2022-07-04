@@ -9,7 +9,7 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.testNozzle
 
-class NozzleDelegate (view: View) {
+class NozzleDelegate(view: View) {
 
     private val input = view.findViewById<EditText>(R.id.id_input_nozzle)
     private val btnReset = view.findViewById<Button>(R.id.id_btn_nozzle_reset)

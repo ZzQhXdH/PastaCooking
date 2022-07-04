@@ -9,7 +9,7 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.clean
 
-class CleanDelegate (view: View) {
+class CleanDelegate(view: View) {
 
     private val sub = view.findViewById<View>(R.id.id_sub_clean)
 

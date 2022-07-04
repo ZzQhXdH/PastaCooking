@@ -16,5 +16,5 @@ interface CmdStatus {
 
     fun result(): String
 
-    fun setNotify(cb: ()->Unit)
+    fun setNotify(cb: () -> Unit)
 }

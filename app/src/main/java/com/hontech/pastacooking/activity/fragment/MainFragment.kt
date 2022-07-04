@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ScrollView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.hontech.pastacooking.R
 import com.hontech.pastacooking.activity.fragment.sub.*
 import com.hontech.pastacooking.activity.view.LogView
-import com.hontech.pastacooking.app.AppExecutor
 import com.hontech.pastacooking.app.bus
 import com.hontech.pastacooking.conn.MainProto
+import com.hontech.pastacooking.event.CookProgEvent
+import com.hontech.pastacooking.event.FridgeStatusEvent
 import com.hontech.pastacooking.event.MainExceptEvent
 import com.hontech.pastacooking.ext.MainStatusEvent
 import org.greenrobot.eventbus.Subscribe
@@ -24,6 +22,7 @@ class MainFragment : Fragment() {
     private lateinit var mainSensor: MainSensor
     private lateinit var mainStatusTv: MainStatusTv
     private lateinit var logView: LogView
+    private lateinit var mFridge: FridgeDelegate
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,6 +54,12 @@ class MainFragment : Fragment() {
         ExternPushDelegate(view)
         PastaDoorDelegate(view)
         PickDoorDelegate(view)
+        ScanDelegate(view)
+        TestPickupDelegate(view)
+        PickUpCookingDelegate(view)
+        CleanParamDelegate(view)
+        LedDelegate(view)
+        mFridge = FridgeDelegate(view)
         logView = view.findViewById(R.id.id_log_view)
     }
 
@@ -66,8 +71,18 @@ class MainFragment : Fragment() {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    fun onFridgeStatusEvent(env: FridgeStatusEvent) {
+        mFridge.update()
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
     fun onMainExceptEvent(env: MainExceptEvent) {
-        logView.append(env.msg)
+        logView.append("code:${env.ec} ${env.msg}")
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    fun onProgEvent(env: CookProgEvent) {
+        logView.append("进度:${env.msg}")
     }
 
 }

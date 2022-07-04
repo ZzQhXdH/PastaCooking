@@ -39,44 +39,7 @@ class MainStatus {
     fun isCargoKeyClicked() = sw2.isSetBit(17)
     fun isFridgeDoorClose() = sw2.isSetBit(18)
     fun isDoorClose() = sw2.isSetBit(19)
+
     fun isThaw() = sw2.isSetBit(20)
     fun isClean() = sw2.isSetBit(21)
-}
-
-class MainStatus2(status: MainStatus) {
-
-    val appVersion = status.appVersion.value
-    val position = status.position.value
-    val ch11 = status.ch11.value
-    val ch12 = status.ch12.value
-    val rotate = status.rotate.mainErrMsg()
-    val elevator = status.elevator.mainErrMsg()
-    val fetch = status.fetch.mainErrMsg()
-    val heat = status.heat.mainErrMsg()
-    val pasta = status.pasta.mainErrMsg()
-    val extern = status.extern.mainErrMsg()
-    val pick = status.pick.mainErrMsg()
-
-    val rotateOrigin = status.isRotateOrigin()
-    val rotateFault = status.isRotateFault()
-    val elevatorOrigin = status.isElevatorOrigin()
-    val elevatorTopOrigin = status.isElevatorTopOrigin()
-    val elevatorFault = status.isElevatorFault()
-    val fetchFault = status.isFetchFault()
-    val heatOpen = status.isHeatOpen()
-    val heatClose = status.isHeatClose()
-    val externOrigin = status.isExternOrigin()
-    val externFault = status.isExternFault()
-    val pastaClose = status.isPastaClose()
-    val pastaOpen = status.isPastaOpen()
-    val pickOpen = status.isPickOpen()
-    val pickClose = status.isPickClose()
-    val pickRaster = status.isPickRaster()
-    val pickProtected = status.isPickProtected()
-    val pastaExist = status.isPastaExist()
-    val cargoKey = status.isCargoKeyClicked()
-    val fridgeClose = status.isFridgeDoorClose()
-    val doorClose = status.isDoorClose()
-    val thaw = status.isThaw()
-    val clean = status.isClean()
 }

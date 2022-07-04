@@ -7,7 +7,13 @@ class SyncValue<T> {
 
     private val lock = ReentrantLock()
     private val cond = lock.newCondition()
+
+    @Volatile
     private var value: T? = null
+
+    fun clear() {
+        value = null
+    }
 
     fun signal(value: T) {
         lock.lock()
@@ -17,10 +23,18 @@ class SyncValue<T> {
     }
 
     fun await(timeout: Long): T? {
-        lock.lock()
-        val ret = cond.await(timeout, TimeUnit.MILLISECONDS)
+
+        do {
+            lock.lock()
+            if (value != null) {
+                break
+            }
+            cond.await(timeout, TimeUnit.MILLISECONDS)
+        } while (false)
+        val r = value
+        value = null
         lock.unlock()
-        return if (ret) this.value else null
+        return r
     }
 }
 

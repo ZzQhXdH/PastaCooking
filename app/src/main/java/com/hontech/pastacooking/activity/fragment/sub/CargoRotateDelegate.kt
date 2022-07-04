@@ -10,7 +10,7 @@ import com.hontech.pastacooking.serial.UInt8
 import com.hontech.pastacooking.task.conn.requestMain
 import org.angmarch.views.NiceSpinner
 
-class CargoRotateDelegate (view: View) {
+class CargoRotateDelegate(view: View) {
 
     val spCols = view.findViewById<NiceSpinner>(R.id.id_sp_cols)
     val btnReset = view.findViewById<Button>(R.id.id_btn_rotate_reset)
@@ -50,9 +50,11 @@ class CargoRotateDelegate (view: View) {
     }
 
     init {
-        spCols.attachDataSource(mutableListOf(
-            "1","2","3","4","5"
-        ))
+        spCols.attachDataSource(
+            mutableListOf(
+                "1", "2", "3", "4", "5"
+            )
+        )
         btnReset.onClick(::onReset)
         btnExec.onClick(::onExec)
     }

@@ -10,7 +10,7 @@ import com.hontech.pastacooking.serial.UInt8
 import com.hontech.pastacooking.task.conn.requestMain
 
 
-class CargoFetchDelegate (view: View) {
+class CargoFetchDelegate(view: View) {
 
     private val btnAdj = view.findViewById<Button>(R.id.id_btn_fetch_adj)
     private val btnLeft = view.findViewById<Button>(R.id.id_btn_fetch_left)
@@ -20,7 +20,7 @@ class CargoFetchDelegate (view: View) {
     companion object {
         const val Timeout = 60 * 1000L
         const val Msg = "测试取货机械手"
-        const val Req= MainProto.TestCargoFetch
+        const val Req = MainProto.TestCargoFetch
     }
 
     private suspend fun exec(type: Int) {
@@ -61,7 +61,7 @@ class CargoFetchDelegate (view: View) {
     }
 
     private suspend fun onRight() {
-        val w= showProg(btnAdj, "机械臂=>右边")
+        val w = showProg(btnAdj, "机械臂=>右边")
         try {
             exec(3)
             w.success("机械臂=>右边成功")

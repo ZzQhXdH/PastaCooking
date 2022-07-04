@@ -8,11 +8,13 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
 
-class GenericTask2 (val timeout: Long,
-                    val addr: Int,
-                    val req: Int,
-                    val args: Array<SerialType>,
-                    val result: Continuation<Frame>) : Runnable {
+class GenericTask2(
+    val timeout: Long,
+    val addr: Int,
+    val req: Int,
+    val args: Array<SerialType>,
+    val result: Continuation<Frame>
+) : Runnable {
 
     override fun run() {
 

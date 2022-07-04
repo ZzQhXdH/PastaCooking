@@ -9,7 +9,7 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.testNozzleDraw
 
-class DrawDelegate (view: View) {
+class DrawDelegate(view: View) {
 
     private val input = view.findViewById<EditText>(R.id.id_input_draw)
     private val btnExec = view.findViewById<Button>(R.id.id_btn_draw)

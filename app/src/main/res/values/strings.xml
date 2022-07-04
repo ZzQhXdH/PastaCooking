@@ -21,7 +21,6 @@
     <string name="text_port_title">串口设置</string>
     <string name="text_port_name">串口名称:</string>
     <string name="text_port_open">打开</string>
-    <string name="text_port_cloes">关闭</string>
     <string name="text_position">机械手传感器:</string>
     <string name="text_unknown">未知</string>
     <string name="test_adc11">ADC11:</string>
@@ -61,4 +60,21 @@
     <string name="text_pump_nozzle">喷嘴放水水泵</string>
     <string name="text_heater_water">开水锅炉加热器</string>
     <string name="text_heater_steam">蒸汽锅炉加热器</string>
+    
+    <string name="def_c">257</string>
+    <string name="def_d">197</string>
+    <string name="def_k">135</string>
+    <string name="def_f">140</string>
+    <string name="def_g">110</string>
+    <string name="def_e">115</string>
+    <string name="def_h">125</string>
+    <string name="def_i">120</string>
+
+    <string name="def_drain_cold_water">50</string>
+    <string name="def_steam_duration">10</string>
+    <string name="def_pre_water">50</string>
+    <string name="def_defroze">20</string>
+    <string name="def_pour_water">150</string>
+    <string name="def_mixsoup">12</string>
+    <string name="def_colgg">7</string>
 </resources>

@@ -6,19 +6,23 @@ import android.os.Looper
 import org.greenrobot.eventbus.EventBus
 
 
-private class AsyncTask : HandlerThread("async") {
+private class ConnThread : HandlerThread("conn-task") {
 
     init {
         start()
     }
 }
 
-object AppExecutor : Handler(Looper.getMainLooper())
+private class NetThread : HandlerThread("net-task") {
+    init {
+        start()
+    }
+}
 
-object WorkExecutor : Handler(AsyncTask().looper)
+object AppTask : Handler(Looper.getMainLooper())
 
-val bus = EventBus.getDefault()
+object ConnTask : Handler(ConnThread().looper)
 
+object NetTask : Handler(NetThread().looper)
 
-
-
+val bus = EventBus.builder().logNoSubscriberMessages(true).build()

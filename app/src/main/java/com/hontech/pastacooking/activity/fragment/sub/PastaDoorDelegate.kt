@@ -9,7 +9,7 @@ import com.hontech.pastacooking.conn.MainProto
 import com.hontech.pastacooking.serial.UInt8
 import com.hontech.pastacooking.task.conn.requestMain
 
-class PastaDoorDelegate (view: View) {
+class PastaDoorDelegate(view: View) {
 
     private val btnOpen = view.findViewById<Button>(R.id.id_btn_pasta_open)
     private val btnClose = view.findViewById<Button>(R.id.id_btn_pasta_close)

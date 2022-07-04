@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/x220"
+    android:layout_height="@dimen/y230"
+    android:background="@drawable/shape_item"
+    android:padding="@dimen/x10">
+
+    <TextView
+        android:id="@+id/id_text_view_title"
+        style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="喷嘴清洗参数"
+        android:textSize="@dimen/x20"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置C:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_c"
+        app:layout_constraintEnd_toStartOf="@+id/id_input_c"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_input_c" />
+
+    <EditText
+        android:id="@+id/id_input_c"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_c"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_pour_water"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_view_title" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="放水体积:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_pour_water"
+        app:layout_constraintEnd_toStartOf="@+id/id_input_pour_water"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_input_pour_water" />
+
+    <EditText
+        android:id="@+id/id_input_pour_water"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:textSize="@dimen/x15"
+        android:text="@string/def_drain_cold_water"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_c" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置D:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_d"
+        app:layout_constraintEnd_toStartOf="@+id/id_input_d"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_input_d" />
+
+
+    <EditText
+        android:id="@+id/id_input_d"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:textSize="@dimen/x15"
+        android:text="@string/def_d"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_steam_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_pour_water" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="喷蒸汽时间:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_steam_time"
+        app:layout_constraintEnd_toStartOf="@+id/id_input_steam_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_input_steam_time" />
+
+    <EditText
+        android:id="@+id/id_input_steam_time"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_steam_duration"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_d" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

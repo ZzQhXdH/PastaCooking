@@ -7,7 +7,7 @@ import com.hontech.pastacooking.R
 import com.hontech.pastacooking.model.MainStatus
 import com.hontech.pastacooking.serial.UInt8
 
-class MainStatusTv (view: View) {
+class MainStatusTv(view: View) {
 
     private val tvPosition = view.findViewById<TextView>(R.id.id_tv_position)
     private val tvAdc11 = view.findViewById<TextView>(R.id.id_tv_adc11)

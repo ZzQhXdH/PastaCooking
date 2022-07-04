@@ -9,7 +9,7 @@ import com.hontech.pastacooking.conn.MainProto
 import com.hontech.pastacooking.serial.UInt8
 import com.hontech.pastacooking.task.conn.requestMain
 
-class PickDoorDelegate (view: View) {
+class PickDoorDelegate(view: View) {
 
     private val btnOpen = view.findViewById<Button>(R.id.id_btn_pick_open)
     private val btnClose = view.findViewById<Button>(R.id.id_btn_pick_close)
@@ -28,7 +28,7 @@ class PickDoorDelegate (view: View) {
         val w = showProg(btnClose, "取物门打开")
         try {
             exec(0)
-            w.success("取物门打开失败")
+            w.success("取物门打开成功")
         } catch (e: Exception) {
             e.printStackTrace()
             w.error(e.message!!)
@@ -39,7 +39,7 @@ class PickDoorDelegate (view: View) {
         val w = showProg(btnClose, "取物门关闭")
         try {
             exec(1)
-            w.success("取物门关闭失败")
+            w.success("取物门关闭成功")
         } catch (e: Exception) {
             e.printStackTrace()
             w.error(e.message!!)

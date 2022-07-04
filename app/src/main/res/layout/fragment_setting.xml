@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -64,6 +65,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout18"
         android:layout_width="@dimen/y220"
         android:layout_height="@dimen/x120"
         android:layout_marginStart="@dimen/x8"
@@ -119,20 +121,260 @@
         android:id="@+id/id_soft_list_main"
         android:layout_width="@dimen/x300"
         android:layout_height="@dimen/y600"
+        android:layout_marginEnd="@dimen/x10"
         android:layout_marginTop="@dimen/x10"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <TextView
-        style="@style/TextViewStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x10"
-        android:id="@+id/id_text_view_mac"
-        android:text="设备MAC地址:"
-        android:textSize="@dimen/x30"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout21"
+        android:layout_width="@dimen/x250"
+        android:layout_height="@dimen/y150"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout18"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout18">
+
+        <TextView
+            android:id="@+id/textView80"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设备信息"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView81"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x10"
+            android:text="Mac地址:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView82"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+        <TextView
+            android:id="@+id/id_tv_mac_addr"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView81"
+            app:layout_constraintTop_toTopOf="@+id/textView81" />
+
+        <TextView
+            android:id="@+id/textView82"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="软件版本:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView85"
+            app:layout_constraintStart_toStartOf="@+id/textView81"
+            app:layout_constraintTop_toBottomOf="@+id/textView81" />
+
+        <TextView
+            android:id="@+id/id_tv_version"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView82"
+            app:layout_constraintTop_toTopOf="@+id/textView82" />
+
+        <TextView
+            android:id="@+id/textView85"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="设备名称:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toTopOf="@+id/textView87"
+            app:layout_constraintStart_toStartOf="@+id/textView82"
+            app:layout_constraintTop_toBottomOf="@+id/textView82" />
+
+        <TextView
+            android:id="@+id/id_tv_device_name"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView85"
+            app:layout_constraintTop_toTopOf="@+id/textView85" />
+
+        <TextView
+            android:id="@+id/textView87"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:text="所在城市:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView85"
+            app:layout_constraintTop_toBottomOf="@+id/textView85" />
+
+        <TextView
+            android:id="@+id/id_tv_city"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="未知"
+            android:textSize="@dimen/x15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView87"
+            app:layout_constraintTop_toTopOf="@+id/textView87" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout28"
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y600"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/id_soft_list_main"
+        app:layout_constraintTop_toTopOf="@+id/id_soft_list_main">
+
+        <TextView
+            android:id="@+id/textView97"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主控板固件"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_rv_main_firm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_marginBottom="@dimen/x10"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_main_get"
+            app:layout_constraintTop_toBottomOf="@+id/textView97"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <Button
+            android:id="@+id/id_btn_main_get"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="获取固件"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout29"
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y600"
+        android:layout_marginStart="@dimen/x10"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout28"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout28">
+
+        <TextView
+            android:id="@+id/textView98"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加热板固件"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_rv_heat_firm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_marginBottom="@dimen/x10"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_heat_get"
+            app:layout_constraintTop_toBottomOf="@+id/textView98"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <Button
+            android:id="@+id/id_btn_heat_get"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="获取固件"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/y600"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        android:layout_marginStart="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout29"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout29">
+
+        <TextView
+            android:id="@+id/textView99"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="称重板固件"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_rv_weight_firm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_marginBottom="@dimen/x10"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_weight_get"
+            app:layout_constraintTop_toBottomOf="@+id/textView99"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <Button
+            android:id="@+id/id_btn_weight_get"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="获取固件"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.hontech.pastacooking.activity.view.LogView
+        android:id="@+id/id_setting_log_view"
+        android:layout_width="@dimen/x500"
+        android:layout_height="@dimen/y300"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout21" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

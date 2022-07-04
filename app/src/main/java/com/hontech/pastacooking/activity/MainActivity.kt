@@ -13,14 +13,20 @@ import com.hontech.pastacooking.R
 import com.hontech.pastacooking.activity.fragment.HeaterFragment
 import com.hontech.pastacooking.activity.fragment.MainFragment
 import com.hontech.pastacooking.activity.fragment.SettingFragment
-import com.hontech.pastacooking.activity.window.valveWindow
+import com.hontech.pastacooking.activity.fragment.WeightFragment
+import com.hontech.pastacooking.activity.window.OtaProgWindow
+import com.hontech.pastacooking.app.bus
 import com.hontech.pastacooking.app.hideSoftKey
+import com.hontech.pastacooking.event.OtaStartEvent
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 class MainActivity : AppCompatActivity() {
 
     private val mViewPager: ViewPager2 by lazy { findViewById(R.id.id_view_pager) }
     private val mNav: BottomNavigationView by lazy { findViewById(R.id.id_nav) }
-    private val mFragments = arrayOf(SettingFragment(), HeaterFragment(), MainFragment())
+    private val mFragments =
+        arrayOf(SettingFragment(), HeaterFragment(), MainFragment(), WeightFragment())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +34,20 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
-    override fun onStop() {
-        super.onStop()
-        valveWindow.dismiss()
+    override fun onStart() {
+        super.onStart()
+        bus.register(this)
     }
 
+    override fun onStop() {
+        super.onStop()
+        bus.unregister(this)
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    fun onOtaStartEvent(env: OtaStartEvent) {
+        OtaProgWindow().show(mNav, env.title)
+    }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         if (ev.action == MotionEvent.ACTION_DOWN) {
@@ -45,29 +60,31 @@ class MainActivity : AppCompatActivity() {
         mViewPager.adapter = Adapter(this, mFragments)
         mViewPager.registerOnPageChangeCallback(mPageChange)
         mNav.setOnItemSelectedListener(mItemSelected)
+        mViewPager.offscreenPageLimit = mFragments.size
     }
 
-    private val mPageChange = object: ViewPager2.OnPageChangeCallback() {
+    private val mPageChange = object : ViewPager2.OnPageChangeCallback() {
 
         override fun onPageSelected(position: Int) {
             mNav.selectedItemId = mNav.menu.getItem(position).itemId
         }
     }
 
-    private val mItemSelected = object: NavigationBarView.OnItemSelectedListener {
+    private val mItemSelected = object : NavigationBarView.OnItemSelectedListener {
 
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when (item.itemId) {
                 R.id.menu_setting -> mViewPager.currentItem = 0
                 R.id.menu_boiler -> mViewPager.currentItem = 1
                 R.id.menu_main -> mViewPager.currentItem = 2
-//                R.id.menu_weight -> mViewPager.currentItem = 3
+                R.id.menu_weight -> mViewPager.currentItem = 3
             }
             return true
         }
     }
 
-    private class Adapter(act: MainActivity, val fragments: Array<Fragment>) : FragmentStateAdapter(act) {
+    private class Adapter(act: MainActivity, val fragments: Array<Fragment>) :
+        FragmentStateAdapter(act) {
 
         override fun getItemCount(): Int {
             return fragments.size

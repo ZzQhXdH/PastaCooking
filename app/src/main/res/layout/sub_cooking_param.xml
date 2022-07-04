@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/x440"
+    android:layout_height="@dimen/y330"
+    android:background="@drawable/shape_item"
+    android:padding="@dimen/x10">
+
+    <TextView
+        android:id="@+id/id_text_view_title"
+        style="@style/TextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x8"
+        android:text="煮面参数"
+        android:textSize="@dimen/x20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置K:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_k"
+        app:layout_constraintEnd_toStartOf="@+id/id_input_k"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_input_k" />
+
+    <EditText
+        android:id="@+id/id_input_k"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_k"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_pre_water"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_view_title" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="PreWater:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_pre_water"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/id_input_pre_water" />
+
+    <EditText
+        android:id="@+id/id_input_pre_water"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_pre_water"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_f"
+        app:layout_constraintStart_toStartOf="@+id/id_input_k"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_k" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置F:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_f"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/id_input_f" />
+
+    <EditText
+        android:id="@+id/id_input_f"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_f"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_g"
+        app:layout_constraintStart_toStartOf="@+id/id_input_pre_water"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_pre_water" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置G:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_g"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/id_input_g" />
+
+
+    <EditText
+        android:id="@+id/id_input_g"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_g"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_defroze"
+        app:layout_constraintStart_toStartOf="@+id/id_input_f"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_f" />
+
+    <TextView
+        android:id="@+id/textView15"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="Defroze:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_defroze"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/id_input_defroze" />
+
+    <EditText
+        android:id="@+id/id_input_defroze"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_defroze"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toTopOf="@+id/id_input_e"
+        app:layout_constraintStart_toStartOf="@+id/id_input_g"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_g" />
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置E:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_e"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="@+id/id_input_e" />
+
+    <EditText
+        android:id="@+id/id_input_e"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_e"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/id_input_defroze"
+        app:layout_constraintTop_toBottomOf="@+id/id_input_defroze" />
+
+
+    <TextView
+        android:id="@+id/textView18"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="PourWater:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_pour_water"
+        app:layout_constraintEnd_toStartOf="@+id/id_input_pour_water"
+        app:layout_constraintStart_toEndOf="@+id/id_input_k"
+        app:layout_constraintTop_toTopOf="@+id/id_input_pour_water" />
+
+    <EditText
+        android:id="@+id/id_input_pour_water"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_pour_water"
+        android:textSize="@dimen/x15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toTopOf="@+id/id_input_k" />
+
+    <TextView
+        android:id="@+id/textView19"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置H:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_h"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
+        app:layout_constraintTop_toTopOf="@+id/id_input_h" />
+
+    <EditText
+        android:id="@+id/id_input_h"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_h"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_input_pour_water"
+        app:layout_constraintTop_toTopOf="@+id/id_input_pre_water" />
+
+    <TextView
+        android:id="@+id/textView20"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="Mixsoup:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_mixsoup"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toTopOf="@+id/id_input_mixsoup" />
+
+    <EditText
+        android:id="@+id/id_input_mixsoup"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_mixsoup"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_input_h"
+        app:layout_constraintTop_toTopOf="@+id/id_input_f" />
+
+
+    <TextView
+        android:id="@+id/textView21"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="位置I:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_i"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/id_input_i" />
+
+    <EditText
+        android:id="@+id/id_input_i"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_i"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_input_mixsoup"
+        app:layout_constraintTop_toTopOf="@+id/id_input_g" />
+
+    <TextView
+        android:id="@+id/textView22"
+        style="@style/TextViewStyle"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:text="Clogging:"
+        android:textSize="@dimen/x15"
+        app:layout_constraintBottom_toBottomOf="@+id/id_input_clogging"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/id_input_clogging" />
+
+    <EditText
+        android:id="@+id/id_input_clogging"
+        style="@style/InputStype"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x40"
+        android:text="@string/def_colgg"
+        android:textSize="@dimen/x15"
+        app:layout_constraintStart_toStartOf="@+id/id_input_i"
+        app:layout_constraintTop_toTopOf="@+id/id_input_defroze" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@ import com.hontech.pastacooking.ext.toHex16
 import com.hontech.pastacooking.ext.toHex8
 import com.hontech.pastacooking.serial.SerialType
 
-class Frame (val dest: Int, val src: Int, val req: Int, val data: ByteArray) {
+class Frame(val dest: Int, val src: Int, val req: Int, val data: ByteArray) {
 
     companion object {
         val DataOffet = 4

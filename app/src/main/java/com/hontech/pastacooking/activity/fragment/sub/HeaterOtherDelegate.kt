@@ -15,14 +15,16 @@ import com.hontech.pastacooking.task.conn.testDeliveryFlag
 import com.hontech.pastacooking.task.conn.testFan
 import kotlinx.coroutines.launch
 
-class HeaterOtherDelegate (view: View) {
+class HeaterOtherDelegate(view: View) {
 
     private val btnQuery = view.findViewById<Button>(R.id.id_btn_query)
     private val swFan = view.findViewById<SwitchCompat>(R.id.id_sw_fan)
     private val btnQuitDelivery = view.findViewById<Button>(R.id.id_btn_quit_delivery)
     private val btnEnterDelivery = view.findViewById<Button>(R.id.id_btn_enter_delivery)
-    private val btnReset = view.findViewById<Button>(R.id.id_btn_reset)
-    private val btnShutdown = view.findViewById<Button>(R.id.id_btn_shutdown)
+    private val btnDrawReset = view.findViewById<Button>(R.id.id_draw_btn_reset)
+    private val btnDrawShutdown = view.findViewById<Button>(R.id.id_draw_btn_shutdown)
+    private val btnHeatReset = view.findViewById<Button>(R.id.id_btn_heat_reset)
+    private val btnHeatShutdown = view.findViewById<Button>(R.id.id_btn_heat_shutdown)
 
     private var updateFlag = false
 
@@ -30,10 +32,12 @@ class HeaterOtherDelegate (view: View) {
         btnQuery.onClick(::onQuery)
         btnQuitDelivery.onClick(::onQuitDelivery)
         btnEnterDelivery.onClick(::onEnterDelivery)
-        btnReset.onClick(::onReset)
-        btnShutdown.onClick(::onShutdown)
+        btnDrawReset.onClick(::onDrawReset)
+        btnDrawShutdown.onClick(::onDrawShutdown)
+        btnHeatReset.onClick(::onHeatReset)
+        btnHeatShutdown.onClick(::onHeatShutdown)
 
-        swFan.setOnCheckedChangeListener {_, flag ->
+        swFan.setOnCheckedChangeListener { _, flag ->
             if (updateFlag) {
                 return@setOnCheckedChangeListener
             }
@@ -52,23 +56,46 @@ class HeaterOtherDelegate (view: View) {
     }
 
 
-    private suspend fun onShutdown() {
-        val w = showProg(btnQuery, "停机")
+    private suspend fun onDrawShutdown() {
+        val w = showProg(btnQuery, "抽水停机")
         try {
-            ctrlWork(1)
-            w.success("停机成功")
+            ctrlWork(3)
+            w.success("抽水停机成功")
         } catch (e: Exception) {
             e.printStackTrace()
             w.error(e.message!!)
         }
     }
 
-    private suspend fun onReset() {
+    private suspend fun onDrawReset() {
 
-        val w = showProg(btnQuery, "重启")
+        val w = showProg(btnQuery, "抽水重启")
+        try {
+            ctrlWork(2)
+            w.success("抽水重启成功")
+        } catch (e: Exception) {
+            e.printStackTrace()
+            w.error(e.message!!)
+        }
+    }
+
+    private suspend fun onHeatShutdown() {
+        val w = showProg(btnQuery, "加热停机")
+        try {
+            ctrlWork(1)
+            w.success("加热停机成功")
+        } catch (e: Exception) {
+            e.printStackTrace()
+            w.error(e.message!!)
+        }
+    }
+
+    private suspend fun onHeatReset() {
+
+        val w = showProg(btnQuery, "加热重启")
         try {
             ctrlWork(0)
-            w.success("重启成功")
+            w.success("加热重启成功")
         } catch (e: Exception) {
             e.printStackTrace()
             w.error(e.message!!)

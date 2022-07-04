@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/y400"
+    android:layout_height="@dimen/x210"
+    android:background="@drawable/shape_item"
+    android:padding="@dimen/x10"
+    android:layout_margin="@dimen/x10">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/x128"
+        android:layout_height="@dimen/y128"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_warn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_text_view_msg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/x10"
+        android:gravity="center"
+        android:text="提示信息"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/x20"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/id_btn_cancel"
+        style="@style/ButtonStype"
+        android:layout_width="@dimen/x120"
+        android:layout_height="@dimen/y50"
+        android:text="取消"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/id_btn_ok"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/id_btn_ok"
+        style="@style/ButtonStype"
+        android:layout_width="@dimen/x120"
+        android:layout_height="@dimen/y50"
+        android:text="确定"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/id_btn_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

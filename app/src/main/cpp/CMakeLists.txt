@@ -3,22 +3,20 @@
 
 # Sets the minimum version of CMake required to build the native library.
 
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.18.1)
 
-set(VCPKG_TARGET_ANDROID ON)
-#set(ANDROID_ABI arm64-v8a)
+# Declares and names the project.
 
-set(VCPKG_TARGET_TRIPLET "arm64-android" CACHE STRING "" FORCE)
+set(PROJECT_NAME "serialportlib")
 
-
-project("pastacooking")
-
-add_definitions(-DASIO_STANDALONE)
+project(${PROJECT_NAME})
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
+
+
 
 file(GLOB_RECURSE SRC_LIST "./src/*.cpp")
 file(GLOB_RECURSE INC_LIST "./src/*.h")
@@ -31,21 +29,20 @@ foreach(FILE ${INC_LIST})
     message(STATUS "inc file: ${FILE}")
 endforeach()
 
-set(LIB_NAME "conn-lib")
 
-add_library( # Sets the name of the library.
-            ${LIB_NAME}
-
-             # Sets the library as a shared library.
-             SHARED
-
-             # Provides a relative path to your source file(s).
-             ${SRC_LIST}
-             ${INC_LIST}
+set(PROJECT_SOURCES
+        ${SRC_LIST}
+        ${INC_LIST}
         )
 
+add_library( # Sets the name of the library.
+        ${PROJECT_NAME}
 
-find_package(asio CONFIG REQUIRED)
+        # Sets the library as a shared library.
+        SHARED
+
+        # Provides a relative path to your source file(s).
+        ${PROJECT_SOURCES})
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -54,22 +51,19 @@ find_package(asio CONFIG REQUIRED)
 # completing its build.
 
 find_library( # Sets the name of the path variable.
-              log-lib
+        log-lib
 
-              # Specifies the name of the NDK library that
-              # you want CMake to locate.
-              log )
+        # Specifies the name of the NDK library that
+        # you want CMake to locate.
+        log)
 
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
 
-target_link_libraries(
-        # Specifies the target library.
-        ${LIB_NAME}
+target_link_libraries( # Specifies the target library.
+        ${PROJECT_NAME}
+
         # Links the target library to the log library
         # included in the NDK.
-        PRIVATE
-        ${log-lib}
-        asio asio::asio
-)
+        ${log-lib})

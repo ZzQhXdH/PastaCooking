@@ -9,7 +9,7 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.setDrawParam
 
-class DrawParamDelegate (view: View) {
+class DrawParamDelegate(view: View) {
 
     private val inputWater = view.findViewById<EditText>(R.id.id_input_draw_water_timeout)
     private val inputSteam = view.findViewById<EditText>(R.id.id_input_draw_steam_timeout)

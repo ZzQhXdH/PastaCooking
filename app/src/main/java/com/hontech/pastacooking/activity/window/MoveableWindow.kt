@@ -8,10 +8,12 @@ import android.widget.PopupWindow
 import com.hontech.pastacooking.R
 import com.hontech.pastacooking.app.AppContext
 
-open class MoveableWindow (viewId: Int, val width: Int, val height: Int) {
+open class MoveableWindow(viewId: Int, val width: Int, val height: Int) {
 
     protected val view = LayoutInflater.from(AppContext).inflate(viewId, null)
     protected val window = PopupWindow(view, width, height, false)
+
+    protected var onCloseFn = {}
 
     var isShow = false
         private set
@@ -23,6 +25,7 @@ open class MoveableWindow (viewId: Int, val width: Int, val height: Int) {
 
     private val onDismiss = fun() {
         isShow = false
+        onCloseFn()
     }
 
     private val onTouch = fun(_: View, env: MotionEvent): Boolean {

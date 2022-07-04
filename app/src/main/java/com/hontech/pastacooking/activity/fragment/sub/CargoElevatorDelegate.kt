@@ -11,7 +11,7 @@ import com.hontech.pastacooking.serial.UInt8
 import com.hontech.pastacooking.task.conn.requestMain
 import org.angmarch.views.NiceSpinner
 
-class CargoElevatorDelegate (view: View) {
+class CargoElevatorDelegate(view: View) {
 
     private val spRows = view.findViewById<NiceSpinner>(R.id.id_sp_rows)
     private val btnReset = view.findViewById<Button>(R.id.id_btn_elevator_reset)
@@ -25,10 +25,12 @@ class CargoElevatorDelegate (view: View) {
     }
 
     init {
-        spRows.attachDataSource(mutableListOf(
-            "1","2","3","4","5",
-            "6","7","8","9","10"
-        ))
+        spRows.attachDataSource(
+            mutableListOf(
+                "1", "2", "3", "4", "5",
+                "6", "7", "8", "9", "10"
+            )
+        )
         btnReset.onClick(::onReset)
         btnHeat.onClick(::onHeat)
         btnExec.onClick(::onExec)

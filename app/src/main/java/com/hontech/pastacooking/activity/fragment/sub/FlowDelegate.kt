@@ -9,9 +9,9 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.setFlowParam
 
-class FlowDelegate (view: View) {
+class FlowDelegate(view: View) {
 
-    private val input =view.findViewById<EditText>(R.id.id_input_flow)
+    private val input = view.findViewById<EditText>(R.id.id_input_flow)
     private val btnSet = view.findViewById<Button>(R.id.id_btn_flow_set)
 
     init {

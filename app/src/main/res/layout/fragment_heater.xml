@@ -565,16 +565,16 @@
             style="@style/TextViewStyle"
             android:layout_width="@dimen/x100"
             android:layout_height="wrap_content"
-            android:text="工作模式:"
+            android:text="抽水状态:"
             android:textSize="@dimen/x15"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView58" />
 
         <TextView
-            android:id="@+id/id_tv_work_type"
+            android:id="@+id/id_tv_draw_type"
             style="@style/TextViewStyle"
-            android:layout_width="@dimen/x100"
+            android:layout_width="@dimen/x150"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/x10"
             android:gravity="start"
@@ -583,31 +583,50 @@
             app:layout_constraintStart_toEndOf="@+id/textView59"
             app:layout_constraintTop_toTopOf="@+id/textView59" />
 
+        <TextView
+            android:id="@+id/textView101"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x10"
+            android:text="加热状态:"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/id_tv_draw_type"
+            app:layout_constraintTop_toTopOf="@+id/id_tv_draw_type" />
+
+        <TextView
+            android:id="@+id/id_tv_heat_type"
+            style="@style/TextViewStyle"
+            android:layout_width="@dimen/x150"
+            android:layout_height="wrap_content"
+            android:text="未知"
+            android:gravity="start"
+            android:textSize="@dimen/x15"
+            app:layout_constraintStart_toEndOf="@+id/textView101"
+            app:layout_constraintTop_toTopOf="@+id/textView101" />
+
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_nozzle_origin"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintBottom_toTopOf="@+id/id_cv_nozzle_fault"
             app:layout_constraintStart_toEndOf="@+id/id_tv_nozzle"
-            app:layout_constraintTop_toBottomOf="@+id/textView52"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_steam_temp_fult"
             app:text="喷嘴电机零点" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_nozzle_fault"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintBottom_toTopOf="@+id/id_cv_water_temp_fault"
             app:layout_constraintStart_toStartOf="@+id/id_cv_nozzle_origin"
-            app:layout_constraintTop_toBottomOf="@+id/id_cv_nozzle_origin"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_steam_temp_fult"
             app:text="喷嘴电机故障" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_water_temp_fault"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintBottom_toTopOf="@+id/id_cv_nozzle_bottom_origin"
-            app:layout_constraintStart_toStartOf="@+id/id_cv_nozzle_fault"
-            app:layout_constraintTop_toBottomOf="@+id/id_cv_nozzle_fault"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_steam_temp_fult"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_water_low"
             app:text="开水锅炉温度传感器故障" />
 
         <com.hontech.pastacooking.activity.view.CheckView
@@ -616,7 +635,7 @@
             android:layout_height="@dimen/y40"
             app:layout_constraintEnd_toStartOf="@+id/id_cv_water_high"
             app:layout_constraintStart_toEndOf="@+id/id_cv_nozzle_origin"
-            app:layout_constraintTop_toTopOf="@+id/id_cv_nozzle_origin"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_water_high"
             app:text="蒸汽锅炉温度传感器故障" />
 
         <com.hontech.pastacooking.activity.view.CheckView
@@ -624,49 +643,54 @@
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
             app:layout_constraintStart_toStartOf="@+id/id_cv_steam_temp_fult"
-            app:layout_constraintTop_toTopOf="@+id/id_cv_nozzle_fault"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_steam_high"
             app:text="漏水" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_water_low"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintStart_toStartOf="@+id/id_cv_leak"
-            app:layout_constraintTop_toTopOf="@+id/id_cv_water_temp_fault"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_steam_high"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_leak"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_water_high"
             app:text="开水锅炉低水位" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_water_high"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_water_low"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/id_cv_steam_temp_fult"
-            app:layout_constraintTop_toTopOf="@+id/id_cv_steam_temp_fult"
+            app:layout_constraintTop_toBottomOf="@+id/textView52"
             app:text="开水锅炉高水位" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_steam_low"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintStart_toStartOf="@+id/id_cv_water_high"
-            app:layout_constraintTop_toTopOf="@+id/id_cv_leak"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/id_cv_steam_high"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_steam_high"
             app:text="蒸汽锅炉低水位" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_steam_high"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintStart_toStartOf="@+id/id_cv_steam_low"
-            app:layout_constraintTop_toTopOf="@+id/id_cv_water_low"
+            app:layout_constraintBottom_toTopOf="@+id/id_cv_steam_low"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_cv_steam_temp_fult"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_water_low"
             app:text="蒸汽锅炉高水位" />
 
         <com.hontech.pastacooking.activity.view.CheckView
             android:id="@+id/id_cv_nozzle_bottom_origin"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/y40"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/id_cv_water_temp_fault"
-            app:layout_constraintTop_toBottomOf="@+id/id_cv_water_temp_fault"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_nozzle_fault"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_water_low"
             app:text="喷嘴电机下零点" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1035,7 +1059,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/x300"
-        android:layout_height="@dimen/y220"
+        android:layout_height="@dimen/y280"
         android:layout_marginStart="@dimen/x10"
         android:background="@drawable/shape_item"
         android:padding="@dimen/x10"
@@ -1061,8 +1085,7 @@
             android:text="查询参数"
             android:textSize="@dimen/x15"
             app:layout_constraintBottom_toTopOf="@+id/id_btn_quit_delivery"
-            app:layout_constraintEnd_toStartOf="@+id/id_sw_fan"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_btn_quit_delivery"
             app:layout_constraintTop_toBottomOf="@+id/textView71" />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -1075,8 +1098,7 @@
             android:theme="@style/SwitchStyle"
             android:thumb="@drawable/sw_thumb"
             app:layout_constraintBottom_toBottomOf="@+id/id_btn_query"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/id_btn_query"
+            app:layout_constraintStart_toStartOf="@+id/id_btn_enter_delivery"
             app:layout_constraintTop_toTopOf="@+id/id_btn_query"
             app:showText="true" />
 
@@ -1087,7 +1109,7 @@
             android:layout_height="@dimen/y50"
             android:text="退出出货模式"
             android:textSize="@dimen/x15"
-            app:layout_constraintBottom_toTopOf="@+id/id_btn_reset"
+            app:layout_constraintBottom_toTopOf="@+id/id_draw_btn_reset"
             app:layout_constraintEnd_toStartOf="@+id/id_btn_enter_delivery"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/id_btn_query" />
@@ -1104,13 +1126,13 @@
             app:layout_constraintTop_toTopOf="@+id/id_btn_quit_delivery" />
 
         <Button
-            android:id="@+id/id_btn_reset"
+            android:id="@+id/id_draw_btn_reset"
             style="@style/ButtonStype"
             android:layout_width="@dimen/x120"
             android:layout_height="@dimen/y50"
-            android:text="重启"
+            android:text="抽水重启"
             android:textSize="@dimen/x15"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/id_btn_heat_reset"
             app:layout_constraintStart_toStartOf="@+id/id_btn_quit_delivery"
             app:layout_constraintTop_toBottomOf="@+id/id_btn_quit_delivery" />
 
@@ -1118,11 +1140,111 @@
             style="@style/ButtonStype"
             android:layout_width="@dimen/x120"
             android:layout_height="@dimen/y50"
-            android:id="@+id/id_btn_shutdown"
-            android:text="停机"
+            android:id="@+id/id_draw_btn_shutdown"
+            android:text="抽水停机"
             android:textSize="@dimen/x15"
             app:layout_constraintStart_toStartOf="@+id/id_btn_enter_delivery"
-            app:layout_constraintTop_toTopOf="@+id/id_btn_reset" />
+            app:layout_constraintTop_toTopOf="@+id/id_draw_btn_reset" />
+
+        <Button
+            android:id="@+id/id_btn_heat_reset"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="加热重启"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/id_draw_btn_reset"
+            app:layout_constraintTop_toBottomOf="@+id/id_draw_btn_reset" />
+
+        <Button
+            android:id="@+id/id_btn_heat_shutdown"
+            style="@style/ButtonStype"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y50"
+            android:text="加热停机"
+            app:layout_constraintEnd_toEndOf="@+id/id_draw_btn_shutdown"
+            app:layout_constraintTop_toTopOf="@+id/id_btn_heat_reset" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/x350"
+        android:layout_height="@dimen/y210"
+        android:background="@drawable/shape_item"
+        android:padding="@dimen/x10"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginTop="@dimen/x10"
+        app:layout_constraintStart_toEndOf="@+id/id_sub_cooking"
+        app:layout_constraintTop_toBottomOf="@+id/id_sub_clean"
+        app:layout_goneMarginStart="@dimen/x10">
+
+        <TextView
+            android:id="@+id/textView100"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水桶状态"
+            android:textSize="@dimen/x20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_inside_exist"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            android:layout_marginTop="@dimen/x10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView100"
+            app:text="有内部水桶" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_extern_exist"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/id_cv_inside_exist"
+            app:text="有外部水桶" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_inside_ok"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_inside_exist"
+            app:text="内部电子秤正常" />
+
+        <com.hontech.pastacooking.activity.view.CheckView
+            android:id="@+id/id_cv_extern_ok"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/y40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_extern_exist"
+            app:text="外部电子秤正常" />
+
+        <TextView
+            android:id="@+id/id_tv_inside_w"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="内部水桶重量:0g"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/id_cv_inside_ok"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_inside_ok" />
+
+        <TextView
+            android:id="@+id/id_tv_extern_w"
+            style="@style/TextViewStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="外部水桶重量:0g"
+            android:textSize="@dimen/x20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/id_cv_extern_ok"
+            app:layout_constraintTop_toBottomOf="@+id/id_cv_extern_ok" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

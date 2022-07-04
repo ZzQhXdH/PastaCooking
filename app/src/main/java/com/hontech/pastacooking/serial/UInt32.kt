@@ -4,7 +4,7 @@ import com.hontech.pastacooking.ext.isSetBit
 import com.hontech.pastacooking.ext.setUInt32
 import com.hontech.pastacooking.ext.toUInt32
 
-data class UInt32 (var value: Int = 0) : SerialType {
+data class UInt32(var value: Int = 0) : SerialType {
 
     override fun size(): Int {
         return 4

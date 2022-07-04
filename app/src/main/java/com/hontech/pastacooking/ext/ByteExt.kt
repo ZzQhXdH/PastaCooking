@@ -1,5 +1,8 @@
 package com.hontech.pastacooking.ext
 
+import android.icu.text.SimpleDateFormat
+import java.util.*
+
 private val HexList = charArrayOf(
     '0', '1', '2', '3',
     '4', '5', '6', '7',
@@ -37,10 +40,12 @@ fun Int.toHex32(): String {
     val h3 = (this shr 8) and 0x0F
     val h2 = (this shr 4) and 0x0F
     val h1 = this and 0x0F
-    return String(charArrayOf(
-        HexList[h8], HexList[h7], HexList[h6], HexList[h5],
-        HexList[h4], HexList[h3], HexList[h2], HexList[h1]
-    ))
+    return String(
+        charArrayOf(
+            HexList[h8], HexList[h7], HexList[h6], HexList[h5],
+            HexList[h4], HexList[h3], HexList[h2], HexList[h1]
+        )
+    )
 }
 
 fun ByteArray.toHex(): String {
@@ -50,6 +55,16 @@ fun ByteArray.toHex(): String {
         sb.append(" ")
     }
     return sb.toString()
+}
+
+fun Int.formatSize(): String {
+    if (this < 1024) {
+        return "${this}Byte"
+    }
+    if (this < 1024 * 1024) {
+        return "${this / 1024}KB"
+    }
+    return "${this / 1024 / 1024}MB"
 }
 
 fun ByteArray.formatMac(): String {
@@ -74,7 +89,7 @@ fun ByteArray.toUInt16(index: Int): Int {
 fun ByteArray.toUInt8(index: Int) = this[index + 0].toUInt8()
 
 fun ByteArray.toUInt32(index: Int): Int {
-    return  (this[0 + index].toUInt8() shl 24) +
+    return (this[0 + index].toUInt8() shl 24) +
             (this[1 + index].toUInt8() shl 16) +
             (this[2 + index].toUInt8() shl 8) +
             (this[3 + index].toUInt8())
@@ -104,4 +119,7 @@ fun ByteArray.checkSum(index: Int, size: Int): Int {
     return sum
 }
 
-
+fun Long.formatDate(): String {
+    val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    return format.format(Date(this * 1000L))
+}

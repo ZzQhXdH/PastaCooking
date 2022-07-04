@@ -8,14 +8,15 @@ import com.hontech.pastacooking.activity.view.CheckView
 import com.hontech.pastacooking.conn.HeaterProto
 import com.hontech.pastacooking.model.HeaterStatus
 
-class HeaterSensorDelegate (view: View) {
+class HeaterSensorDelegate(view: View) {
 
     private val tvNozzle = view.findViewById<TextView>(R.id.id_tv_nozzle)
     private val tvWaterTemp = view.findViewById<TextView>(R.id.id_tv_water_temp)
     private val tvSteamTemp = view.findViewById<TextView>(R.id.id_tv_steam_temp)
     private val tvSteamKpa = view.findViewById<TextView>(R.id.id_tv_steam_kpa)
     private val tvFlow = view.findViewById<TextView>(R.id.id_tv_flow)
-    private val tvWork = view.findViewById<TextView>(R.id.id_tv_work_type)
+    private val tvDraw = view.findViewById<TextView>(R.id.id_tv_draw_type)
+    private val tvHeat = view.findViewById<TextView>(R.id.id_tv_heat_type)
 
     private val cvNozzleOrigin = view.findViewById<CheckView>(R.id.id_cv_nozzle_origin)
     private val cvNozzleFault = view.findViewById<CheckView>(R.id.id_cv_nozzle_fault)
@@ -34,7 +35,8 @@ class HeaterSensorDelegate (view: View) {
         tvSteamTemp.text = "${status.steamTemp.signedValue()}℃"
         tvSteamKpa.text = "${status.steamKpa.value}KPA"
         tvFlow.text = "${status.count.value}"
-        tvWork.text = HeaterProto.workMsg(status.workType.value)
+        tvDraw.text = HeaterProto.drawMsg(status.drawType.value)
+        tvHeat.text = HeaterProto.heatMsg(status.heatType.value)
 
         cvNozzleOrigin.setChecked(status.isNozzleOrigin())
         cvNozzleFault.setChecked(status.isNozzleFault())

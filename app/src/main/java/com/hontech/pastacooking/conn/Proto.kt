@@ -4,13 +4,14 @@ import com.hontech.pastacooking.ext.checkSum
 import com.hontech.pastacooking.ext.setUInt16
 import com.hontech.pastacooking.ext.setUInt8
 import com.hontech.pastacooking.serial.SerialType
-import java.lang.IllegalStateException
 
 object Proto {
 
     const val SalveFlag = 0x8000
     const val NotifyFlag = 0x4000
 
+    const val H0 = 0xE1
+    const val H1 = 0x1E
     const val Head = 0xE11E
     const val End = 0xEF
 

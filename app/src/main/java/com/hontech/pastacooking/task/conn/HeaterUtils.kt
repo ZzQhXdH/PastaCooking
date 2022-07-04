@@ -1,6 +1,6 @@
 package com.hontech.pastacooking.task.conn
 
-import com.hontech.pastacooking.app.WorkExecutor
+import com.hontech.pastacooking.app.ConnTask
 import com.hontech.pastacooking.conn.Addr
 import com.hontech.pastacooking.conn.Frame
 import com.hontech.pastacooking.conn.HeaterProto
@@ -9,20 +9,16 @@ import com.hontech.pastacooking.serial.UInt16
 import com.hontech.pastacooking.serial.UInt8
 import kotlin.coroutines.suspendCoroutine
 
-suspend fun requestHeater(timeout: Long, req: Int, args: Array<SerialType>, exceptMsg: String) = suspendCoroutine<Unit> {
-    WorkExecutor.post(GenericTask(timeout, Addr.Heator, req, args, exceptMsg, it))
-}
+suspend fun requestHeater(timeout: Long, req: Int, args: Array<SerialType>, exceptMsg: String) =
+    suspendCoroutine<Unit> {
+        ConnTask.post(GenericTask(timeout, Addr.Heator, req, args, exceptMsg, it))
+    }
 
-suspend fun requestHeater2(timeout: Long, req: Int, args: Array<SerialType>) = suspendCoroutine<Frame> {
-    val task = GenericTask2(timeout, Addr.Heator, req, args, it)
-    WorkExecutor.post(task)
-}
-
-suspend fun startHeaterOta(data: ByteArray) = suspendCoroutine<Unit> {
-    val ctx = OtaCtx(Addr.Heator, HeaterProto.OtaStart, HeaterProto.OtaTranslate, HeaterProto.OtaComplete)
-    val task = OtaTask(ctx, data, it)
-    WorkExecutor.post(task)
-}
+suspend fun requestHeater2(timeout: Long, req: Int, args: Array<SerialType>) =
+    suspendCoroutine<Frame> {
+        val task = GenericTask2(timeout, Addr.Heator, req, args, it)
+        ConnTask.post(task)
+    }
 
 suspend fun testValve(id: Int, value: Int) {
     val timeout = 4 * 1000L
@@ -110,7 +106,8 @@ suspend fun queryHeaterParam(): HeaterParam {
     val drawWaterTimeout = UInt8()
     val drawSteamTimeout = UInt8()
     val flow = UInt16()
-    frame.parse(waterTemp,
+    frame.parse(
+        waterTemp,
         waterTimeout,
         steamTemp,
         steamKpa,
@@ -131,14 +128,23 @@ suspend fun queryHeaterParam(): HeaterParam {
     )
 }
 
+suspend fun heatPreproc() {
+    val timeout = 3 * 2000L
+    requestHeater(timeout, HeaterProto.PreProc, arrayOf(), "加热板预处理")
+}
+
+
 suspend fun clean(c: Int, waterVolume: Int, d: Int, steamTime: Int) {
+    heatPreproc()
+
     val timeout = 60 * 1000L
     val req = HeaterProto.Clean
-    val arg: Array<SerialType> = arrayOf(UInt16(c), UInt16(waterVolume), UInt16(d), UInt16((steamTime)))
+    val arg: Array<SerialType> =
+        arrayOf(UInt16(c), UInt16(waterVolume), UInt16(d), UInt16((steamTime)))
     requestHeater(timeout, req, arg, "清洗")
 }
 
-class CookingParam (
+class CookingParam(
     val k: Int,
     val preWater: Int,
     val f: Int,
@@ -153,6 +159,8 @@ class CookingParam (
 )
 
 suspend fun cooking(param: CookingParam) {
+    heatPreproc()
+
     val timeout = 180 * 1000L
     val req = HeaterProto.Cooking
     val arg: Array<SerialType> = arrayOf(
@@ -197,6 +205,9 @@ suspend fun ctrlWork(value: Int) {
     )
     requestHeater(timeout, req, arg, "加热/抽水控制")
 }
+
+
+
 
 
 

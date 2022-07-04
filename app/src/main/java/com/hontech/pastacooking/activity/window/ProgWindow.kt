@@ -6,13 +6,13 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.hontech.pastacooking.R
-import com.hontech.pastacooking.app.AppExecutor
+import com.hontech.pastacooking.app.AppTask
 import com.hontech.pastacooking.app.dimenById
 
 private val width = dimenById(R.dimen.x250)
 private val height = dimenById(R.dimen.y300)
 
-class ProgWindow : MoveableWindow (R.layout.window_prog, width, height) {
+class ProgWindow : MoveableWindow(R.layout.window_prog, width, height) {
 
     private val btnClose = view.findViewById<Button>(R.id.id_btn_close)
     private val image = view.findViewById<ImageView>(R.id.id_img_prog)
@@ -48,7 +48,7 @@ class ProgWindow : MoveableWindow (R.layout.window_prog, width, height) {
     fun success(text: String) {
         setOk()
         textView.text = text
-        AppExecutor.postDelayed({dismiss()}, 2 * 1000L)
+        AppTask.postDelayed({ dismiss() }, 2 * 1000L)
     }
 
     fun show(parent: View, text: String) {

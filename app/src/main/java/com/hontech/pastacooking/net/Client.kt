@@ -1,5 +1,11 @@
 package com.hontech.pastacooking.net
 
+import com.hontech.pastacooking.app.DevPort
+import com.hontech.pastacooking.app.ServeAddr
+import com.hontech.pastacooking.app.bus
+import com.hontech.pastacooking.app.log
+import com.hontech.pastacooking.event.LoginChangedEvent
+import com.hontech.pastacooking.model.DeviceInfo
 import com.hontech.pastacooking.utils.SyncValue
 import java.io.IOException
 import java.net.InetSocketAddress
@@ -8,11 +14,17 @@ import java.net.Socket
 object Client {
 
     private var socket: Socket? = null
-    private var reader:Reader? = null
+    private var reader: Reader? = null
     private var writer: Writer? = null
 
-    const val Host = "106.14.180.8"
-    const val Port = 32456
+    const val Host = ServeAddr
+    const val Port = DevPort
+
+    var info = DeviceInfo.default()
+        set(value) {
+            field = value
+            bus.post(LoginChangedEvent())
+        }
 
     fun connect(host: String, port: Int) {
         close()
@@ -22,6 +34,7 @@ object Client {
         reader = Reader(socket!!, sync)
         writer = Writer(socket!!, sync)
         reader!!.start()
+        log("dev server 连接成功")
     }
 
     private fun close() {
@@ -34,7 +47,8 @@ object Client {
         if (!isConnected()) {
             throw IOException("net disconnected")
         }
-        return writer!!.write(req, body, timeout)
+        val frame = writer!!.write(req, body, timeout)
+        return frame
     }
 
     fun isConnected(): Boolean {

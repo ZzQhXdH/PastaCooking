@@ -9,7 +9,7 @@ import com.hontech.pastacooking.app.onClick
 import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.setSteamHeatParam
 
-class SteamParamDelegate (view: View) {
+class SteamParamDelegate(view: View) {
 
     private val inputTemp = view.findViewById<EditText>(R.id.id_input_steam_temp)
     private val inputKpa = view.findViewById<EditText>(R.id.id_input_steam_kpa)

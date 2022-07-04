@@ -10,7 +10,7 @@ private val width = dimenById(R.dimen.x400)
 private val height = dimenById(R.dimen.y340)
 
 class ValveWindow : MoveableWindow(R.layout.window_valve, width, height) {
-    
+
     private val sw1 = view.findViewById<SwitchCompat>(R.id.id_sw_valve1)
     private val sw2 = view.findViewById<SwitchCompat>(R.id.id_sw_valve2)
     private val sw3 = view.findViewById<SwitchCompat>(R.id.id_sw_valve3)
@@ -20,7 +20,7 @@ class ValveWindow : MoveableWindow(R.layout.window_valve, width, height) {
     private val sw7 = view.findViewById<SwitchCompat>(R.id.id_sw_valve7)
     private val sw8 = view.findViewById<SwitchCompat>(R.id.id_sw_valve8)
     private val sw9 = view.findViewById<SwitchCompat>(R.id.id_sw_valve9)
-    
+
     init {
         sw1.setOnCheckedChangeListener { _, isChecked -> onCheckChanged(isChecked, 1) }
         sw2.setOnCheckedChangeListener { _, isChecked -> onCheckChanged(isChecked, 2) }

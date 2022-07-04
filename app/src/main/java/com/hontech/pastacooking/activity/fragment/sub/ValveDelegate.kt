@@ -3,14 +3,13 @@ package com.hontech.pastacooking.activity.fragment.sub
 import android.view.View
 import androidx.appcompat.widget.SwitchCompat
 import com.hontech.pastacooking.R
-import com.hontech.pastacooking.activity.window.ProgWindow
 import com.hontech.pastacooking.activity.window.showProg
 import com.hontech.pastacooking.app.AppScope
 import com.hontech.pastacooking.model.HeaterStatus
 import com.hontech.pastacooking.task.conn.testValve
 import kotlinx.coroutines.launch
 
-class ValveDelegate (view: View) {
+class ValveDelegate(view: View) {
 
     private val v1 = view.findViewById<SwitchCompat>(R.id.id_sw_valve1)
     private val v2 = view.findViewById<SwitchCompat>(R.id.id_sw_valve2)

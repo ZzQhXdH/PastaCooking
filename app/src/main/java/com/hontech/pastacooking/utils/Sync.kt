@@ -8,16 +8,31 @@ class Sync {
     private val lock = ReentrantLock()
     private val cond = lock.newCondition()
 
+    @Volatile
+    private var ackFlag = false
+
+    fun clear() {
+        ackFlag = false
+    }
+
     fun signal() {
         lock.lock()
+        ackFlag = true
         cond.signal()
         lock.unlock()
     }
 
     fun await(timeout: Long): Boolean {
         lock.lock()
-        val ret = cond.await(timeout, TimeUnit.MILLISECONDS)
+        do {
+            if (ackFlag) {
+                break
+            }
+            cond.await(timeout, TimeUnit.MILLISECONDS)
+        } while (false)
+        val flag = ackFlag
+        ackFlag = false
         lock.unlock()
-        return ret
+        return flag
     }
 }

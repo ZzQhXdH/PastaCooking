@@ -10,7 +10,7 @@ import com.hontech.pastacooking.app.toInt
 import com.hontech.pastacooking.task.conn.CookingParam
 import com.hontech.pastacooking.task.conn.cooking
 
-class CookingDelegate (sub: View) {
+class CookingDelegate(sub: View) {
     private val view = sub.findViewById<View>(R.id.id_sub_cooking)
 
     private val inputK = view.findViewById<EditText>(R.id.id_input_k)
@@ -44,7 +44,8 @@ class CookingDelegate (sub: View) {
             val mixsoup = inputMixsoup.toInt()
             val i = inputI.toInt()
             val clogging = inputClogging.toInt()
-            val param = CookingParam(k, preWater, f, g, defroze, e, pourWater, h, mixsoup, i, clogging)
+            val param =
+                CookingParam(k, preWater, f, g, defroze, e, pourWater, h, mixsoup, i, clogging)
             cooking(param)
             w.success("煮面成功")
         } catch (e: Exception) {

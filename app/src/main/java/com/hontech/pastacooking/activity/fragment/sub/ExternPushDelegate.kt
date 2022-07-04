@@ -11,14 +11,14 @@ import com.hontech.pastacooking.serial.UInt16
 import com.hontech.pastacooking.serial.UInt8
 import com.hontech.pastacooking.task.conn.requestMain
 
-class ExternPushDelegate (view: View) {
+class ExternPushDelegate(view: View) {
 
     private val btnReset = view.findViewById<Button>(R.id.id_btn_extern_reset)
     private val btnFront = view.findViewById<Button>(R.id.id_btn_extern_front)
     private val btnBack = view.findViewById<Button>(R.id.id_btn_extern_back)
     private val btnAdj = view.findViewById<Button>(R.id.id_btn_extern_adj)
     private val btnExec = view.findViewById<Button>(R.id.id_btn_extern_exec)
-    private val inputDistance = view.findViewById<EditText>(R.id.id_input_distance)
+    private val inputDistance = view.findViewById<EditText>(R.id.id_edit_distance)
 
     companion object {
         const val Timeout = 60 * 1000L
